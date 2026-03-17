@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 import { Mail, Phone, MapPin, AlertTriangle, ArrowRight } from 'lucide-react'
 import Seo from '../components/Seo.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
@@ -10,12 +10,12 @@ import { useI18n } from '../utils/i18n.js'
 import { getConsultationImage } from '../utils/images.js'
 
 const contactDetails = {
-  phoneDisplay: '+91 98765 43210',
-  phoneTel: 'tel:+919876543210',
+  phoneDisplay: '+91 7452819652',
+  phoneTel: 'tel:+917452819652',
   whatsapp:
-    'https://wa.me/919876543210?text=Hi%20I%20need%20legal%20help',
-  email: 'support@legalsupportnow.in',
-  address: '4th Floor, DLF Plaza, M.G. Road, Gurugram, Haryana 122002',
+    'https://wa.me/917452819652?text=Hi%20I%20need%20legal%20help',
+  email: 'aasifahmadnahalvi11@gmail.com',
+  address: 'Masuri Ghaziabad, near thana masuri, ghaziabad, Uttar Pradesh, India 201015',
   mapsEmbed:
     'https://www.google.com/maps?q=DLF%20Plaza%20M.G.%20Road%20Gurugram&output=embed',
 }
@@ -77,10 +77,10 @@ export default function Contact() {
       {/* Main content */}
       <section className="section-alt">
         <div className="container-max py-12 sm:py-16">
-          <motion.div variants={stagger(0.12)} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-80px' }}>
+          <Motion.div variants={stagger(0.12)} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-80px' }}>
             <div className="grid gap-8 lg:grid-cols-12 items-start">
               {/* Form column */}
-              <motion.div variants={fadeUp} className="lg:col-span-7">
+              <Motion.div variants={fadeUp} className="lg:col-span-7">
                 {/* Contact form */}
                 <div className="bg-white rounded-2xl border border-black/[0.07] shadow-card p-7 sm:p-8">
                   <div className="text-xl font-bold text-primary">
@@ -229,10 +229,10 @@ export default function Contact() {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </Motion.div>
 
               {/* Sidebar */}
-              <motion.div variants={fadeUp} className="lg:col-span-5 grid gap-5">
+              <Motion.div variants={fadeUp} className="lg:col-span-5 grid gap-5">
                 {/* Consultation image */}
                 <div className="rounded-2xl overflow-hidden shadow-card border border-black/[0.06]">
                   <img
@@ -285,9 +285,9 @@ export default function Contact() {
                     {t('contact.privacyDesc')}
                   </p>
                 </div>
-              </motion.div>
+              </Motion.div>
             </div>
-          </motion.div>
+          </Motion.div>
         </div>
       </section>
     </>

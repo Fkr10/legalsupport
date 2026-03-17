@@ -44,13 +44,13 @@ export default function Footer() {
               <Phone className="h-4 w-4 text-accent shrink-0" />
               +91 7452819652
             </a>
-            <a href="mailto:support@legalsupportnow.in" className="flex items-center gap-2.5 hover:text-white transition-colors">
+            <a href="mailto:aasifahmadnahalvi11@gmail.com" className="flex items-center gap-2.5 hover:text-white transition-colors">
               <Mail className="h-4 w-4 text-accent shrink-0" />
-              support@legalsupportnow.in
+              aasifahmadnahalvi11@gmail.com
             </a>
             <div className="flex items-start gap-2.5">
               <MapPin className="h-4 w-4 text-accent shrink-0 mt-0.5" />
-              <span>4th Floor, DLF Plaza, M.G. Road, Gurugram, Haryana 122002</span>
+              <span>Masuri Ghaziabad, near thana masuri, ghaziabad, Uttar Pradesh, India 201015</span>
             </div>
           </div>
           <div className="mt-6 pt-4 border-t border-white/10 text-xs text-white/40">
