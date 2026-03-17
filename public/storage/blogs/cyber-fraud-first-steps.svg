@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Online Fraud: First Steps">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1C2C" stop-opacity="0.96" />
+      <stop offset="1" stop-color="#1F2937" stop-opacity="0.96" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" rx="44" fill="url(#bg)" />
+  <circle cx="1040" cy="520" r="210" fill="#C8A951" opacity="0.12" />
+  <circle cx="260" cy="120" r="160" fill="#C8A951" opacity="0.10" />
+  <g transform="translate(90 110)">
+    <rect x="0" y="0" width="160" height="160" rx="36" fill="#0B1C2C" stroke="#C8A951" stroke-opacity="0.35" />
+    <path d="M48 96c0-26 20-46 46-46h12c26 0 46 20 46 46v14c0 26-20 46-46 46H94c-26 0-46-20-46-46V96Z" fill="#C8A951" opacity="0.92" />
+    <path d="M100 86v28" stroke="#0B1C2C" stroke-width="8" stroke-linecap="round" />
+    <circle cx="100" cy="126" r="6" fill="#0B1C2C" />
+  </g>
+  <text x="90" y="355" font-family="Playfair Display, Georgia, serif" font-size="64" font-weight="700" fill="#FFFFFF">
+    Online Fraud: First Steps
+  </text>
+  <text x="90" y="418" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="28" font-weight="500" fill="#FFFFFF" opacity="0.86">
+    Preserve evidence, report fast, and protect your timeline
+  </text>
+  <rect x="90" y="458" width="260" height="6" rx="3" fill="#C8A951" opacity="0.85" />
+</svg>

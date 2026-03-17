@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @apply bg-background text-secondary antialiased;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+::selection {
+  background: rgba(200, 169, 81, 0.25);
+  color: #0B1C2C;
+}
+
+@layer base {
+  html:lang(hi) body {
+    font-family: "Noto Sans Devanagari", Inter, system-ui, Segoe UI, Roboto, sans-serif;
+  }
+
+  html:lang(hi) h1,
+  html:lang(hi) h2,
+  html:lang(hi) h3,
+  html:lang(hi) h4 {
+    font-family: "Noto Sans Devanagari", Inter, system-ui, Segoe UI, Roboto, sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-sans font-semibold text-primary tracking-tight;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    @apply leading-relaxed;
+    line-height: 1.75;
+  }
+
+  img {
+    display: block;
+  }
+}
+
+@layer utilities {
+  /* ─── App Background ─── */
+  .app-bg {
+    background:
+      radial-gradient(900px 500px at 15% -5%, rgba(200, 169, 81, 0.18), transparent 55%),
+      radial-gradient(700px 450px at 85% 5%, rgba(200, 169, 81, 0.06), transparent 50%),
+      linear-gradient(175deg, #0B1C2C 0%, #0F172A 40%, #111827 100%);
+  }
+
+  /* ─── Section Backgrounds ─── */
+  .section-light {
+    @apply bg-white;
+  }
+  .section-alt {
+    @apply bg-[#F3F4F6];
+  }
+  .section-dark {
+    @apply bg-primary text-white;
+  }
+
+  /* ─── Glass Utilities ─── */
+  /* Dark glass: for hero overlays, dark panels */
+  .glass {
+    @apply backdrop-blur-md border border-white/15 shadow-glass;
+    background: rgba(11, 28, 44, 0.70);
+  }
+
+  /* Light glass: for cards in light sections — nearly solid for readability */
+  .glass-light {
+    @apply border border-black/[0.07] bg-white shadow-card;
+  }
+
+  /* Strong glass: for blog/reading content — fully solid */
+  .glass-strong {
+    @apply border border-black/[0.07] bg-white shadow-soft;
+  }
+
+  /* Dark card panel: solid dark for dark-bg content areas */
+  .glass-dark-card {
+    @apply border border-white/10 shadow-glass;
+    background: rgba(11, 28, 44, 0.82);
+    backdrop-filter: blur(12px);
+  }
+
+  /* Input fields */
+  .glass-input {
+    @apply w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-secondary outline-none transition
+      placeholder:text-secondary/40
+      focus:border-accent/50 focus:ring-2 focus:ring-accent/15
+      hover:border-black/20;
+  }
+
+  /* CTA button glass variant */
+  .glass-button {
+    @apply backdrop-blur-md border border-white/25 bg-white/10 text-white hover:bg-white/20 transition-all;
+  }
+
+  /* ─── Layout ─── */
+  .container-max {
+    @apply mx-auto w-full max-w-content px-4 sm:px-6;
+  }
+
+  /* ─── Typography ─── */
+  /* Clean prose for blog reading */
+  .prose-clean p {
+    font-size: 1.0625rem;
+    line-height: 1.875;
+    color: rgba(31, 41, 55, 0.92);
+    margin-bottom: 1.5rem;
+  }
+  .prose-clean p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ─── Interactive ─── */
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1.5px;
+    transition: background-size 220ms ease;
+  }
+  .link-underline:hover {
+    background-size: 100% 1.5px;
+  }
+
+  /* ─── Image overlay helpers ─── */
+  .img-overlay-dark {
+    background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+  }
+  .img-overlay-light {
+    background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 100%);
+  }
+}
+
