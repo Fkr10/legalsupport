@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 import {
   ArrowRight,
   ShieldCheck,
@@ -18,7 +18,7 @@ import TestimonialSlider from '../components/TestimonialSlider.jsx'
 import { fadeUp, stagger } from '../utils/motion.js'
 import { useI18n } from '../utils/i18n.js'
 import { getHeroImage } from '../utils/images.js'
-import { getPracticeAreaImage, getTestimonialsBg } from '../utils/images.js'
+import { getPracticeAreaImage } from '../utils/images.js'
 
 const practiceAreas = [
   {
@@ -92,8 +92,8 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-br from-black/75 via-black/60 to-black/50" />
         </div>
         <div className="container-max py-20 sm:py-24 w-full">
-          <motion.div variants={stagger(0.1)} initial="hidden" animate="show">
-            <motion.div variants={fadeUp} className="max-w-4xl">
+          <Motion.div variants={stagger(0.1)} initial="hidden" animate="show">
+            <Motion.div variants={fadeUp} className="max-w-4xl">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-md px-4 py-2 text-xs font-bold tracking-[0.15em] uppercase text-white/80">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
                 {t('home.heroEyebrow')}
@@ -112,7 +112,7 @@ export default function Home() {
                 </Button>
                 <Button
                   as="a"
-                  href="https://wa.me/919876543210?text=Hi%20I%20need%20legal%20help"
+                  href="https://wa.me/917452819652?text=Hi%20I%20need%20legal%20help"
                   target="_blank"
                   rel="noreferrer"
                   variant="glass"
@@ -139,15 +139,15 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-            </motion.div>
-          </motion.div>
+            </Motion.div>
+          </Motion.div>
         </div>
       </section>
 
       {/* ── Success / Track Record ── */}
       <section className="section-alt">
         <div className="container-max py-16 sm:py-20">
-          <motion.div
+          <Motion.div
             variants={stagger(0.12)}
             initial="hidden"
             whileInView="show"
@@ -162,7 +162,7 @@ export default function Home() {
             </div>
 
             <div className="mt-8 grid gap-6 lg:grid-cols-12">
-              <motion.div variants={fadeUp} className="lg:col-span-7">
+              <Motion.div variants={fadeUp} className="lg:col-span-7">
                 <div className="bg-white border border-black/[0.07] rounded-2xl shadow-card p-7 sm:p-8">
                   <div className="grid gap-4 sm:grid-cols-3">
                     {[
@@ -196,9 +196,9 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </Motion.div>
 
-              <motion.div variants={fadeUp} className="lg:col-span-5">
+              <Motion.div variants={fadeUp} className="lg:col-span-5">
                 <div className="bg-primary rounded-2xl p-7 sm:p-8 h-full">
                   <div className="text-[11px] font-bold tracking-[0.2em] uppercase text-accent border-l-2 border-accent pl-3">
                     {t('home.successPanelEyebrow')}
@@ -215,16 +215,16 @@ export default function Home() {
                     </Button>
                   </div>
                 </div>
-              </motion.div>
+              </Motion.div>
             </div>
-          </motion.div>
+          </Motion.div>
         </div>
       </section>
 
       {/* ── Practice Areas ── */}
       <section className="section-light">
         <div className="container-max py-16 sm:py-20">
-          <motion.div variants={stagger(0.12)} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-80px' }}>
+          <Motion.div variants={stagger(0.12)} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-80px' }}>
             <SectionHeading
               eyebrow={t('home.practiceEyebrow')}
               title={t('home.practiceTitle')}
@@ -235,7 +235,7 @@ export default function Home() {
               {practiceAreas.map((a) => {
                 const Icon = a.icon
                 return (
-                  <motion.div key={a.title} variants={fadeUp}>
+                  <Motion.div key={a.title} variants={fadeUp}>
                     <Card className={['p-0 overflow-hidden', a.focus ? 'border-accent/40 ring-1 ring-accent/20' : ''].join(' ')}>
                       {/* Image header with gradient overlay */}
                       <div className="relative">
@@ -272,19 +272,19 @@ export default function Home() {
                         </ul>
                       </div>
                     </Card>
-                  </motion.div>
+                  </Motion.div>
                 )
               })}
             </div>
-          </motion.div>
+          </Motion.div>
         </div>
       </section>
 
       {/* ── Trust / Speed ── */}
       <section style={{ background: '#F0F2F5' }}>
         <div className="container-max py-16 sm:py-20">
-          <motion.div variants={stagger(0.12)} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-80px' }} className="grid gap-10 md:grid-cols-12 items-start">
-            <motion.div variants={fadeUp} className="md:col-span-6">
+          <Motion.div variants={stagger(0.12)} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-80px' }} className="grid gap-10 md:grid-cols-12 items-start">
+            <Motion.div variants={fadeUp} className="md:col-span-6">
               <SectionHeading
                 eyebrow={t('home.trustEyebrow')}
                 title={t('home.trustTitle')}
@@ -298,9 +298,9 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </Motion.div>
 
-            <motion.div variants={fadeUp} className="md:col-span-6">
+            <Motion.div variants={fadeUp} className="md:col-span-6">
               <div className="bg-white rounded-2xl border border-black/8 shadow-card p-7 sm:p-8">
                 <div className="text-[11px] font-bold tracking-[0.2em] uppercase text-accent">
                   {t('home.speedEyebrow')}
@@ -336,37 +336,37 @@ export default function Home() {
                   <Button as="link" to="/contact" variant="accent">
                     {t('home.speedPrimaryCta')} <ArrowRight className="h-4 w-4" />
                   </Button>
-                  <Button as="a" href="tel:+919876543210" variant="secondary">
+                  <Button as="a" href="tel:+917452819652" variant="secondary">
                     {t('common.callNow')}
                   </Button>
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
+            </Motion.div>
+          </Motion.div>
         </div>
       </section>
 
       {/* ── Testimonials ── */}
       <section className="bg-primary">
         <div className="container-max py-16 sm:py-20">
-          <motion.div variants={stagger(0.12)} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-80px' }}>
+          <Motion.div variants={stagger(0.12)} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-80px' }}>
             <SectionHeading
               eyebrow={t('home.testimonialsEyebrow')}
               title={t('home.testimonialsTitle')}
               description={t('home.testimonialsDesc')}
               tone="dark"
             />
-            <motion.div variants={fadeUp} className="mt-10">
+            <Motion.div variants={fadeUp} className="mt-10">
               <TestimonialSlider testimonials={testimonials} />
-            </motion.div>
-          </motion.div>
+            </Motion.div>
+          </Motion.div>
         </div>
       </section>
 
       {/* ── Final CTA ── */}
       <section className="section-alt">
         <div className="container-max py-16 sm:py-20">
-          <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-80px' }}>
+          <Motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-80px' }}>
             <div className="rounded-2xl bg-white shadow-card border border-black/[0.07] p-8 sm:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
               <div>
                 <div className="text-[11px] font-bold tracking-[0.2em] uppercase text-accent">
@@ -385,7 +385,7 @@ export default function Home() {
                 </Button>
                 <Button
                   as="a"
-                  href="https://wa.me/919876543210?text=Hi%20I%20need%20legal%20help"
+                  href="https://wa.me/917452819652?text=Hi%20I%20need%20legal%20help"
                   target="_blank"
                   rel="noreferrer"
                   variant="secondary"
@@ -395,7 +395,7 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-          </motion.div>
+          </Motion.div>
         </div>
       </section>
     </>

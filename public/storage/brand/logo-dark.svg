@@ -4,7 +4,7 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
             font-size: 22px;
             font-weight: 600;
-            fill: #0B1C2C;
+            fill: #ffffff;
         }
 
         .accent-text {
@@ -12,10 +12,10 @@
         }
     </style>
 
-    <rect width="100%" height="100%" fill="#ffffff" />
+    <rect width="100%" height="100%" fill="#0B1C2C" />
 
     <g transform="translate(8,10)">
-        <rect width="48" height="48" rx="12" fill="#0B1C2C" />
+        <rect width="48" height="48" rx="12" fill="#ffffff" />
         <path d="M16 16 L16 32 L32 32" stroke="#C8A951" stroke-width="4" fill="none" stroke-linecap="round" />
         <circle cx="32" cy="16" r="3.5" fill="#E2C373" />
     </g>

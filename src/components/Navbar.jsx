@@ -1,11 +1,12 @@
 import { NavLink, Link } from 'react-router-dom'
 import { useEffect, useMemo, useState } from 'react'
 import { Menu, X, PhoneCall } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion as Motion, AnimatePresence } from 'framer-motion'
 import Logo from './Logo.jsx'
 import Button from './Button.jsx'
 import LanguageToggle from './LanguageToggle.jsx'
 import { useI18n } from '../utils/i18n.js'
+import { useDisclaimerAccepted } from '../context/DisclaimerContext.jsx'
 
 const navItems = [
   { key: 'nav.home', to: '/' },
@@ -19,6 +20,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const { t } = useI18n()
+  const disclaimerAccepted = useDisclaimerAccepted()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16)
@@ -36,6 +38,11 @@ export default function Navbar() {
       return `${base} bg-white/98 border-black/10 shadow-soft backdrop-blur-sm`
     return `${base} backdrop-blur-lg bg-primary/15 border-white/10`
   }, [scrolled])
+
+  // Hide navbar until disclaimer is accepted
+  if (!disclaimerAccepted) {
+    return null
+  }
 
   return (
     <header className={wrapperClass}>
@@ -74,10 +81,12 @@ export default function Navbar() {
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-3 shrink-0">
           <LanguageToggle tone={scrolled ? 'dark' : 'light'} />
-          <Button as="link" to="/contact" variant="accent" className="shrink-0 whitespace-nowrap">
-            <PhoneCall className="h-3.5 w-3.5 shrink-0" />
-            {t('nav.cta')}
-          </Button>
+          {disclaimerAccepted && (
+            <Button as="link" to="/contact" variant="accent" className="shrink-0 whitespace-nowrap">
+              <PhoneCall className="h-3.5 w-3.5 shrink-0" />
+              {t('nav.cta')}
+            </Button>
+          )}
         </div>
 
         {/* Mobile hamburger */}
@@ -93,7 +102,7 @@ export default function Navbar() {
         >
           <AnimatePresence mode="wait" initial={false}>
             {open ? (
-              <motion.span
+              <Motion.span
                 key="close"
                 initial={{ rotate: -90, opacity: 0 }}
                 animate={{ rotate: 0, opacity: 1 }}
@@ -101,9 +110,9 @@ export default function Navbar() {
                 transition={{ duration: 0.15 }}
               >
                 <X className="h-5 w-5" />
-              </motion.span>
+              </Motion.span>
             ) : (
-              <motion.span
+              <Motion.span
                 key="open"
                 initial={{ rotate: 90, opacity: 0 }}
                 animate={{ rotate: 0, opacity: 1 }}
@@ -111,7 +120,7 @@ export default function Navbar() {
                 transition={{ duration: 0.15 }}
               >
                 <Menu className="h-5 w-5" />
-              </motion.span>
+              </Motion.span>
             )}
           </AnimatePresence>
         </button>
@@ -120,7 +129,7 @@ export default function Navbar() {
       {/* Mobile menu */}
       <AnimatePresence>
         {open ? (
-          <motion.div
+          <Motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -140,13 +149,15 @@ export default function Navbar() {
               ))}
               <div className="pt-3 border-t border-black/8 mt-2 flex flex-col gap-3">
                 <LanguageToggle tone="dark" />
-                <Button as="link" to="/contact" variant="accent" className="w-full justify-center" onClick={closeMenu}>
-                  <PhoneCall className="h-4 w-4" />
-                  {t('nav.cta')}
-                </Button>
+                {disclaimerAccepted && (
+                  <Button as="link" to="/contact" variant="accent" className="w-full justify-center" onClick={closeMenu}>
+                    <PhoneCall className="h-4 w-4" />
+                    {t('nav.cta')}
+                  </Button>
+                )}
               </div>
             </div>
-          </motion.div>
+          </Motion.div>
         ) : null}
       </AnimatePresence>
     </header>

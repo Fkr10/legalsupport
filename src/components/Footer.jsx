@@ -40,9 +40,9 @@ export default function Footer() {
             {t('footer.contact')}
           </div>
           <div className="flex flex-col gap-3 text-sm text-white/70">
-            <a href="tel:+919876543210" className="flex items-center gap-2.5 hover:text-white transition-colors">
+            <a href="tel:+917452819652" className="flex items-center gap-2.5 hover:text-white transition-colors">
               <Phone className="h-4 w-4 text-accent shrink-0" />
-              +91 98765 43210
+              +91 7452819652
             </a>
             <a href="mailto:support@legalsupportnow.in" className="flex items-center gap-2.5 hover:text-white transition-colors">
               <Mail className="h-4 w-4 text-accent shrink-0" />

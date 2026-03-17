@@ -1,15 +1,23 @@
 import { Phone, MessageCircle } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
+import { useDisclaimerAccepted } from '../context/DisclaimerContext.jsx'
 
-const PHONE = '+919876543210'
-const PHONE_TEL = 'tel:+919876543210'
-const WA = 'https://wa.me/919876543210?text=Hi%20I%20need%20legal%20help'
+const PHONE = '+91 7452819652'
+const PHONE_TEL = 'tel:+917452819652'
+const WA = 'https://wa.me/917452819652?text=Hi%20I%20need%20legal%20help'
 
 export default function FloatingActions() {
+  const disclaimerAccepted = useDisclaimerAccepted()
+
+  // Hide floating actions until disclaimer is accepted
+  if (!disclaimerAccepted) {
+    return null
+  }
+
   return (
     <div className="fixed bottom-6 right-5 z-[55] flex flex-col items-end gap-3">
       {/* WhatsApp */}
-      <motion.a
+      <Motion.a
         href={WA}
         target="_blank"
         rel="noreferrer"
@@ -20,10 +28,10 @@ export default function FloatingActions() {
       >
         <MessageCircle className="h-5 w-5 shrink-0" />
         <span className="hidden sm:block text-sm font-semibold pr-0.5">WhatsApp</span>
-      </motion.a>
+      </Motion.a>
 
       {/* Call */}
-      <motion.a
+      <Motion.a
         href={PHONE_TEL}
         aria-label={`Call ${PHONE}`}
         whileHover={{ y: -2, scale: 1.04 }}
@@ -33,7 +41,7 @@ export default function FloatingActions() {
         <span className="absolute inset-0 rounded-full animate-ping bg-accent/30 pointer-events-none" />
         <Phone className="relative h-5 w-5 shrink-0" />
         <span className="relative hidden sm:block text-sm font-semibold pr-0.5">Call Now</span>
-      </motion.a>
+      </Motion.a>
     </div>
   )
 }
