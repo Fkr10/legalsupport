@@ -1,0 +1,83 @@
+{
+  "areas": [
+    {
+      "id": "criminal",
+      "title": "Criminal Law",
+      "icon": "Gavel",
+      "highlight": true,
+      "description": "Urgent representation for bail, FIR strategy, investigation support, and trial preparation.",
+      "services": [
+        "Anticipatory & Regular Bail",
+        "FIR review, drafting & strategy",
+        "Quashing petitions (case-specific)",
+        "Court appearances & hearings",
+        "Trial preparation & appeals"
+      ]
+    },
+    {
+      "id": "civil",
+      "title": "Civil Law",
+      "icon": "Scale",
+      "highlight": false,
+      "description": "Practical dispute resolution for individuals and businesses with clear documentation and timelines.",
+      "services": [
+        "Injunctions",
+        "Recovery matters",
+        "Consumer disputes",
+        "Legal notices"
+      ]
+    },
+    {
+      "id": "corporate",
+      "title": "Corporate Law",
+      "icon": "Building2",
+      "highlight": false,
+      "description": "Contracts, compliance, and advisory for founders, SMEs, and service businesses.",
+      "services": [
+        "Contract drafting & review",
+        "Vendor/customer dispute support",
+        "Retainer advisory (monthly)",
+        "Compliance basics & documentation"
+      ]
+    },
+    {
+      "id": "family",
+      "title": "Family Law",
+      "icon": "HeartHandshake",
+      "highlight": false,
+      "description": "Sensitive guidance for divorce, custody, and maintenance with careful handling of evidence and communication.",
+      "services": [
+        "Divorce (mutual/contested)",
+        "Child custody & visitation",
+        "Maintenance & alimony",
+        "Domestic violence matters"
+      ]
+    },
+    {
+      "id": "property",
+      "title": "Property Law",
+      "icon": "Home",
+      "highlight": false,
+      "description": "Property disputes, documentation review, and notices with a focus on risk reduction.",
+      "services": [
+        "Title & document review",
+        "Builder/homebuyer disputes",
+        "Possession & injunction",
+        "Partition & inheritance matters"
+      ]
+    },
+    {
+      "id": "cyber",
+      "title": "Cyber Law",
+      "icon": "Shield",
+      "highlight": false,
+      "description": "Guidance for cyber complaints, account compromise, online fraud documentation, and safe communication.",
+      "services": [
+        "Online fraud documentation",
+        "Cyber complaint guidance",
+        "Defamation/impersonation cases",
+        "Digital evidence preservation"
+      ]
+    }
+  ]
+}

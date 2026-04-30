@@ -11,7 +11,12 @@
     "build": "vite build",
     "start": "serve -s dist -l 3000",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "docker:build": "docker build -t legalsupportnow:latest .",
+    "docker:run": "docker run -p 8080:8080 legalsupportnow:latest",
+    "docker:compose:up": "docker-compose up -d",
+    "docker:compose:down": "docker-compose down",
+    "docker:compose:logs": "docker-compose logs -f"
   },
   "dependencies": {
     "framer-motion": "^12.38.0",

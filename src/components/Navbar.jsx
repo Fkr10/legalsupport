@@ -7,14 +7,9 @@ import Button from './Button.jsx'
 import LanguageToggle from './LanguageToggle.jsx'
 import { useI18n } from '../utils/i18n.js'
 import { useDisclaimerAccepted } from '../context/DisclaimerContext.jsx'
+import navigationData from '../data/navigation.json'
 
-const navItems = [
-  { key: 'nav.home', to: '/' },
-  { key: 'nav.practice', to: '/practice-areas' },
-  { key: 'nav.about', to: '/about' },
-  { key: 'nav.blog', to: '/blog' },
-  { key: 'nav.contact', to: '/contact' },
-]
+const navItems = navigationData.primary
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)

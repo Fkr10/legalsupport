@@ -1,0 +1,47 @@
+{
+  "primary": [
+    {
+      "key": "nav.home",
+      "to": "/",
+      "end": true
+    },
+    {
+      "key": "nav.practice",
+      "to": "/practice-areas",
+      "end": false
+    },
+    {
+      "key": "nav.about",
+      "to": "/about",
+      "end": false
+    },
+    {
+      "key": "nav.blog",
+      "to": "/blog",
+      "end": false
+    },
+    {
+      "key": "nav.contact",
+      "to": "/contact",
+      "end": false
+    }
+  ],
+  "footer": [
+    {
+      "key": "nav.practice",
+      "to": "/practice-areas"
+    },
+    {
+      "key": "nav.about",
+      "to": "/about"
+    },
+    {
+      "key": "nav.blog",
+      "to": "/blog"
+    },
+    {
+      "key": "nav.contact",
+      "to": "/contact"
+    }
+  ]
+}

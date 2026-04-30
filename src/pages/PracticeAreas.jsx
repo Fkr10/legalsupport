@@ -15,78 +15,21 @@ import Button from '../components/Button.jsx'
 import { fadeUp, stagger } from '../utils/motion.js'
 import { useI18n } from '../utils/i18n.js'
 import { getPracticeAreaImage, getPracticeHeaderImage } from '../utils/images.js'
+import practiceAreasData from '../data/practiceAreas.json'
 
-const practiceAreas = [
-  {
-    title: 'Criminal Law',
-    icon: Gavel,
-    highlight: true,
-    description:
-      'Urgent representation for bail, FIR strategy, investigation support, and trial preparation.',
-    services: [
-      'Anticipatory & Regular Bail',
-      'FIR review, drafting & strategy',
-      'Quashing petitions (case-specific)',
-      'Court appearances & hearings',
-      'Trial preparation & appeals',
-    ],
-  },
-  {
-    title: 'Civil Law',
-    icon: Scale,
-    description:
-      'Practical dispute resolution for individuals and businesses with clear documentation and timelines.',
-    services: ['Injunctions', 'Recovery matters', 'Consumer disputes', 'Legal notices'],
-  },
-  {
-    title: 'Corporate Law',
-    icon: Building2,
-    description:
-      'Contracts, compliance, and advisory for founders, SMEs, and service businesses.',
-    services: [
-      'Contract drafting & review',
-      'Vendor/customer dispute support',
-      'Retainer advisory (monthly)',
-      'Compliance basics & documentation',
-    ],
-  },
-  {
-    title: 'Family Law',
-    icon: HeartHandshake,
-    description:
-      'Sensitive guidance for divorce, custody, and maintenance with careful handling of evidence and communication.',
-    services: [
-      'Divorce (mutual/contested)',
-      'Child custody & visitation',
-      'Maintenance & alimony',
-      'Domestic violence matters',
-    ],
-  },
-  {
-    title: 'Property Law',
-    icon: HomeIcon,
-    description:
-      'Property disputes, documentation review, and notices with a focus on risk reduction.',
-    services: [
-      'Title & document review',
-      'Builder/homebuyer disputes',
-      'Possession & injunction',
-      'Partition & inheritance matters',
-    ],
-  },
-  {
-    title: 'Cyber Law',
-    icon: Shield,
-    description:
-      'Guidance for cyber complaints, account compromise, online fraud documentation, and safe communication.',
-    services: [
-      'Online fraud documentation',
-      'Cyber complaint guidance',
-      'Defamation/impersonation cases',
-      'Digital evidence preservation',
-    ],
-  },
-]
+const iconMap = {
+  Gavel,
+  Scale,
+  Building2,
+  HeartHandshake,
+  Home: HomeIcon,
+  Shield,
+}
+
+const practiceAreasWithIcons = practiceAreasData.areas.map(area => ({
+  ...area,
+  icon: iconMap[area.icon] || Gavel,
+}))
 
 export default function PracticeAreas() {
   const { t } = useI18n()
@@ -124,7 +67,7 @@ export default function PracticeAreas() {
         <div className="container-max py-16 sm:py-20">
           <motion.div variants={stagger(0.12)} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-80px' }}>
             <div className="grid gap-6 md:grid-cols-2">
-              {practiceAreas.map((p) => {
+              {practiceAreasWithIcons.map((p) => {
                 const Icon = p.icon
                 return (
                   <motion.div key={p.title} variants={fadeUp}>

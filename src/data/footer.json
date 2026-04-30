@@ -1,0 +1,29 @@
+{
+  "company": {
+    "name": "LegalSupportNow",
+    "phone": {
+      "display": "+91 7452819652",
+      "tel": "tel:+917452819652"
+    },
+    "email": "aasifahmadnahalvi11@gmail.com",
+    "address": "Masuri Ghaziabad, near thana masuri, ghaziabad, Uttar Pradesh, India 201015"
+  },
+  "quickLinks": [
+    {
+      "key": "nav.practice",
+      "to": "/practice-areas"
+    },
+    {
+      "key": "nav.about",
+      "to": "/about"
+    },
+    {
+      "key": "nav.blog",
+      "to": "/blog"
+    },
+    {
+      "key": "nav.contact",
+      "to": "/contact"
+    }
+  ]
+}

@@ -97,6 +97,7 @@ body {
       placeholder:text-secondary/40
       focus:border-accent/50 focus:ring-2 focus:ring-accent/15
       hover:border-black/20;
+    min-height: 2.75rem;
   }
 
   /* CTA button glass variant */
@@ -109,16 +110,50 @@ body {
     @apply mx-auto w-full max-w-content px-4 sm:px-6;
   }
 
-  /* ─── Typography ─── */
+  /* ─── Mobile-First Typography ─── */
+  /* Improved mobile heading sizes */
+  h1 {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+  }
+  h2 {
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
+  }
+  h3 {
+    @apply text-lg sm:text-xl md:text-2xl;
+  }
+  h4 {
+    @apply text-base sm:text-lg;
+  }
+
   /* Clean prose for blog reading */
   .prose-clean p {
-    font-size: 1.0625rem;
+    font-size: clamp(1rem, 1vw + 0.75rem, 1.0625rem);
     line-height: 1.875;
     color: rgba(31, 41, 55, 0.92);
     margin-bottom: 1.5rem;
   }
   .prose-clean p:last-child {
     margin-bottom: 0;
+  }
+
+  /* ─── Touch-Friendly UI ─── */
+  /* Ensure buttons are at least 44px tall on mobile for touch */
+  button, 
+  a[role="button"],
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"] {
+    min-height: 2.75rem;
+  }
+
+  @media (max-width: 640px) {
+    button,
+    a[role="button"],
+    input[type="button"],
+    input[type="submit"],
+    input[type="reset"] {
+      min-height: 3rem;
+    }
   }
 
   /* ─── Interactive ─── */
@@ -139,6 +174,41 @@ body {
   }
   .img-overlay-light {
     background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 100%);
+  }
+
+  /* ─── Mobile Spacing ─── */
+  /* Better spacing for mobile sections */
+  @media (max-width: 640px) {
+    .section-mobile-pad {
+      @apply py-8 px-4;
+    }
+    
+    .section-mobile-pad-lg {
+      @apply py-12 px-4;
+    }
+  }
+
+  /* ─── Responsive Grid ─── */
+  /* Better grid layouts for mobile */
+  @media (max-width: 640px) {
+    .grid-responsive {
+      @apply grid gap-4;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .grid-responsive {
+      @apply grid gap-5;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1025px) {
+    .grid-responsive {
+      @apply grid gap-6;
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }
 

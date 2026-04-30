@@ -5,22 +5,11 @@ import SectionHeading from '../components/SectionHeading.jsx'
 import Button from '../components/Button.jsx'
 import { fadeUp, stagger } from '../utils/motion.js'
 import { getLawyerPortrait, getOfficeImage, getConsultationImage, getAboutHeaderImage } from '../utils/images.js'
+import lawyerData from '../data/lawyer.json'
 
 const lawyerProfile = {
-  name: 'Adv. Meera Sharma',
-  title: 'Criminal Defense & Litigation Counsel',
-  location: 'Delhi NCR',
-  experience: '12+ years',
+  ...lawyerData.profile,
   photo: getLawyerPortrait(),
-  highlights: [
-    'Bail strategy, FIR assessment, court appearances, and trial preparation',
-    'Evidence-first case building and disciplined documentation',
-    'Clear communication, realistic timelines, and practical next steps',
-  ],
-  education: [
-    'LL.B. (Hons.), Faculty of Law, University of Delhi',
-    'Advanced Certificate in Criminal Litigation, NALSAR (executive program)',
-  ],
 }
 
 export default function About() {

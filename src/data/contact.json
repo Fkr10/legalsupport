@@ -1,0 +1,21 @@
+{
+  "contact": {
+    "phone": {
+      "display": "+91 7452819652",
+      "tel": "tel:+917452819652"
+    },
+    "whatsapp": "https://wa.me/917452819652?text=Hi%20I%20need%20legal%20help",
+    "email": "aasifahmadnahalvi11@gmail.com",
+    "address": "Masuri Ghaziabad, near thana masuri, ghaziabad, Uttar Pradesh, India 201015",
+    "mapsEmbed": "https://www.google.com/maps?q=DLF%20Plaza%20M.G.%20Road%20Gurugram&output=embed"
+  },
+  "caseTypes": [
+    "Criminal (Bail / FIR / Trial)",
+    "Cyber (Online Fraud / Impersonation)",
+    "Property (Dispute / Documentation)",
+    "Family (Divorce / Custody / Maintenance)",
+    "Civil (Recovery / Injunction / Consumer)",
+    "Corporate (Contracts / Notices / Advisory)",
+    "Other / Not sure"
+  ]
+}

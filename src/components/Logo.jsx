@@ -1,19 +1,26 @@
 import { Link } from 'react-router-dom'
 
-export default function Logo() {
+export default function Logo({ variant = 'light' }) {
+  // Determine which logo to use based on variant
+  const logoSrc = variant === 'dark' 
+    ? '/storage/brand/legalsupportnow-mark-dark.svg'
+    : '/storage/brand/legalsupportnow-mark-new.svg'
+
   return (
     <Link 
       to="/" 
       className="group inline-flex items-center transition-transform duration-300 hover:scale-105"
+      title="LegalSupportNow - Criminal Defense & Legal Support"
     >
-      {/* Logo Mark */}
+      {/* Logo Mark - New Professional Design */}
       <img
-        src="/storage/brand/legalsupportnow-mark.svg"
-        alt="LegalSupportNow"
+        src={logoSrc}
+        alt="LegalSupportNow - Professional Legal Support"
         className={[
-          'h-20 w-40 rounded-2xl transition-all duration-300',
+          'h-auto w-40 transition-all duration-300',
           'group-hover:shadow-lg group-hover:scale-110',
-          'shadow-soft'
+          'shadow-soft',
+          'rounded-lg'
         ].join(' ')}
         loading="eager"
         decoding="async"

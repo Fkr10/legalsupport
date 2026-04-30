@@ -8,27 +8,9 @@ import Button from '../components/Button.jsx'
 import { fadeUp, stagger } from '../utils/motion.js'
 import { useI18n } from '../utils/i18n.js'
 import { getConsultationImage } from '../utils/images.js'
+import contactData from '../data/contact.json'
 
-const contactDetails = {
-  phoneDisplay: '+91 7452819652',
-  phoneTel: 'tel:+917452819652',
-  whatsapp:
-    'https://wa.me/917452819652?text=Hi%20I%20need%20legal%20help',
-  email: 'aasifahmadnahalvi11@gmail.com',
-  address: 'Masuri Ghaziabad, near thana masuri, ghaziabad, Uttar Pradesh, India 201015',
-  mapsEmbed:
-    'https://www.google.com/maps?q=DLF%20Plaza%20M.G.%20Road%20Gurugram&output=embed',
-}
-
-const caseTypes = [
-  'Criminal (Bail / FIR / Trial)',
-  'Cyber (Online Fraud / Impersonation)',
-  'Property (Dispute / Documentation)',
-  'Family (Divorce / Custody / Maintenance)',
-  'Civil (Recovery / Injunction / Consumer)',
-  'Corporate (Contracts / Notices / Advisory)',
-  'Other / Not sure',
-]
+const { contact: contactDetails, caseTypes } = contactData
 
 export default function Contact() {
   const { t } = useI18n()
@@ -212,7 +194,7 @@ export default function Contact() {
                         {t('contact.emergencyDesc')}
                       </p>
                       <div className="mt-3 flex flex-col sm:flex-row gap-2">
-                        <Button as="a" href={contactDetails.phoneTel} variant="dark">
+                        <Button as="a" href={contactDetails.phone.tel} variant="dark">
                           <Phone className="h-4 w-4" />
                           {t('common.callNow')}
                         </Button>
@@ -249,9 +231,9 @@ export default function Contact() {
                     {t('contact.contactDetails')}
                   </div>
                   <div className="mt-5 grid gap-3.5 text-sm text-secondary/75">
-                    <a className="flex items-center gap-3 hover:text-primary transition-colors" href={contactDetails.phoneTel}>
+                    <a className="flex items-center gap-3 hover:text-primary transition-colors" href={contactDetails.phone.tel}>
                       <Phone className="h-4 w-4 text-accent shrink-0" />
-                      {contactDetails.phoneDisplay}
+                      {contactDetails.phone.display}
                     </a>
                     <a className="flex items-center gap-3 hover:text-primary transition-colors" href={`mailto:${contactDetails.email}`}>
                       <Mail className="h-4 w-4 text-accent shrink-0" />

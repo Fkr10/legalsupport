@@ -1,0 +1,74 @@
+<svg width="320" height="80" viewBox="0 0 320 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="monoShadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <style>
+    .mono-text {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      fill: #0B1C2C;
+      letter-spacing: -0.5px;
+    }
+  </style>
+
+  <!-- Shield Logo - Monochrome -->
+  <g transform="translate(12, 8)">
+    <!-- Shield background -->
+    <path d="M 8 0 L 8 16 Q 8 28 24 32 Q 40 28 40 16 L 40 0 Q 24 4 24 4 Q 24 4 8 0 Z" 
+          fill="none" 
+          stroke="#0B1C2C" 
+          stroke-width="1.5"
+          filter="url(#monoShadow)"/>
+
+    <!-- Left Scale Pan -->
+    <g>
+      <circle cx="18" cy="18" r="1.5" fill="#0B1C2C" opacity="0.8"/>
+      <line x1="18" y1="18" x2="12" y2="18" stroke="#0B1C2C" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
+      <rect x="9" y="19" width="5" height="4" rx="1" fill="#0B1C2C" opacity="0.7"/>
+      <line x1="11.5" y1="19" x2="11.5" y2="16" stroke="#0B1C2C" stroke-width="1" opacity="0.6"/>
+    </g>
+
+    <!-- Right Scale Pan -->
+    <g>
+      <line x1="18" y1="18" x2="30" y2="18" stroke="#0B1C2C" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
+      <rect x="28" y="19" width="5" height="4" rx="1" fill="#0B1C2C" opacity="0.7"/>
+      <line x1="30.5" y1="19" x2="30.5" y2="16" stroke="#0B1C2C" stroke-width="1" opacity="0.6"/>
+    </g>
+
+    <!-- Center Gavel -->
+    <g transform="translate(24, 12)">
+      <rect x="-3" y="-2" width="6" height="4" rx="1" fill="#0B1C2C" opacity="0.8"/>
+      <line x1="0" y1="2" x2="0" y2="8" stroke="#0B1C2C" stroke-width="1.5" stroke-linecap="round" opacity="0.9"/>
+      <rect x="-2" y="8" width="4" height="1.5" rx="0.5" fill="#0B1C2C" opacity="0.7"/>
+    </g>
+
+    <!-- Shield accent border -->
+    <path d="M 9 2 Q 24 0 39 2" 
+          stroke="#0B1C2C" 
+          stroke-width="1.5" 
+          fill="none" 
+          stroke-linecap="round" 
+          opacity="0.5"/>
+
+    <!-- Trust indicators -->
+    <g opacity="0.6">
+      <circle cx="24" cy="28" r="0.8" fill="#0B1C2C"/>
+      <circle cx="20" cy="29" r="0.6" fill="#0B1C2C"/>
+      <circle cx="28" cy="29" r="0.6" fill="#0B1C2C"/>
+    </g>
+  </g>
+
+  <!-- Brand Text - Monochrome -->
+  <text x="70" y="51" class="mono-text">
+    LegalSupportNow
+  </text>
+
+  <!-- Tagline -->
+  <text x="70" y="68" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size: 11px; fill: #1F2937; letter-spacing: 0.5px; font-weight: 500;">
+    CRIMINAL DEFENSE • FAST ACTION
+  </text>
+</svg>

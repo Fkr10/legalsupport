@@ -19,56 +19,25 @@ import { fadeUp, stagger } from '../utils/motion.js'
 import { useI18n } from '../utils/i18n.js'
 import { getHeroImage } from '../utils/images.js'
 import { getPracticeAreaImage } from '../utils/images.js'
+import testimonialsData from '../data/testimonials.json'
+import practiceAreasData from '../data/practiceAreas.json'
 
-const practiceAreas = [
-  {
-    title: 'Criminal Law',
-    focus: true,
-    icon: Gavel,
-    description:
-      'Urgent representation for bail, FIR strategy, trial preparation, and court appearances.',
-    services: ['Anticipatory & Regular Bail', 'FIR & Quashing Strategy', 'Trial & Appeals'],
-  },
-  {
-    title: 'Civil Law',
-    icon: Scale,
-    description: 'Practical advice for disputes, recovery matters, and injunctions.',
-    services: ['Injunctions', 'Recovery Suits', 'Consumer Disputes'],
-  },
-  {
-    title: 'Corporate Law',
-    icon: ShieldCheck,
-    description: 'Contracts, compliance, and advisory support for growing businesses.',
-    services: ['Contract Drafting', 'Legal Notices', 'Retainer Advisory'],
-  },
-  {
-    title: 'Family Law',
-    icon: BadgeCheck,
-    description: 'Sensitive handling of divorce, custody, and maintenance matters.',
-    services: ['Divorce & Mutual Consent', 'Child Custody', 'Maintenance'],
-  },
-]
+const iconMap = {
+  Gavel,
+  Scale,
+  ShieldCheck,
+  BadgeCheck,
+}
 
-const testimonials = [
-  {
-    name: 'Neha Bansal',
-    context: 'Bail consultation (Delhi)',
-    quote:
-      'We got a clear plan within the first call. The team moved fast, explained the timeline, and helped us avoid mistakes that could have delayed bail.',
-  },
-  {
-    name: 'Saurabh Nair',
-    context: 'Cyber complaint support (Bengaluru)',
-    quote:
-      'They documented everything properly and guided me on what to share and what not to share. The advice was practical and calm in a stressful situation.',
-  },
-  {
-    name: 'Kavita Mehta',
-    context: 'Property dispute (Gurugram)',
-    quote:
-      'The communication was precise and regular. We understood the options and next steps at every stage, which made decision-making much easier.',
-  },
-]
+// Use first 4 practice areas for home page
+const practiceAreas = practiceAreasData.areas.slice(0, 4).map(area => ({
+  ...area,
+  icon: iconMap[area.icon] || Gavel,
+  focus: area.highlight,
+  services: area.services.slice(0, 3), // Limit services display on home
+}))
+
+const testimonials = testimonialsData.items
 
 export default function Home() {
   const { t, lang } = useI18n()
