@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Phone, Mail, MapPin } from 'lucide-react'
 import Logo from './Logo.jsx'
+import LanguageToggle from './LanguageToggle.jsx'
 import { useI18n } from '../utils/i18n.js'
 import footerData from '../data/footer.json'
 import contactData from '../data/contact.json'
@@ -13,10 +14,13 @@ export default function Footer() {
     <footer className="mt-20 border-t-2 border-accent/30 bg-primary">
       <div className="container-max py-14 grid gap-10 md:grid-cols-12">
         <div className="md:col-span-5">
-          <Logo variant="light" />
+          <Logo variant="dark" />
           <p className="mt-4 text-sm text-white/70 max-w-sm leading-relaxed">
             {t('footer.desc')}
           </p>
+          <div className="mt-6">
+            <LanguageToggle tone="light" />
+          </div>
         </div>
 
         <div className="md:col-span-3">

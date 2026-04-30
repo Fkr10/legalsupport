@@ -4,7 +4,6 @@ import { Menu, X, PhoneCall, MessageCircle, Mail, ShieldCheck } from 'lucide-rea
 import { motion as Motion, AnimatePresence } from 'framer-motion'
 import Logo from './Logo.jsx'
 import Button from './Button.jsx'
-import LanguageToggle from './LanguageToggle.jsx'
 import { useI18n } from '../utils/i18n.js'
 import { useDisclaimerAccepted } from '../context/DisclaimerContext.jsx'
 import navigationData from '../data/navigation.json'
@@ -28,19 +27,15 @@ export default function Navbar() {
       <div className="hidden md:block bg-[#08151f] text-white/70 text-xs border-b border-white/5">
         <div className="container-max h-9 flex items-center justify-between gap-4">
           <div className="flex items-center gap-5">
-            <a href={phone.tel} className="group inline-flex items-center gap-2 hover:text-white transition-colors">
+            <a href={`mailto:${email}`} className="group inline-flex items-center gap-2 hover:text-white transition-colors">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-accent" />
               </span>
               <span className="font-semibold tracking-wide">
-                {lang === 'hi' ? '24/7 आपातकालीन हेल्पलाइन:' : '24/7 Emergency Helpline:'}
+                {lang === 'hi' ? '24/7 आपातकालीन सहायता:' : '24/7 Emergency Support:'}
               </span>
-              <span className="font-bold text-accent group-hover:text-white transition-colors">{phone.display}</span>
-            </a>
-            <a href={`mailto:${email}`} className="hidden lg:inline-flex items-center gap-1.5 hover:text-white transition-colors">
-              <Mail className="h-3.5 w-3.5" />
-              <span>{email}</span>
+              <span className="font-bold text-accent group-hover:text-white transition-colors">{email}</span>
             </a>
           </div>
           <div className="flex items-center gap-4">
@@ -48,7 +43,6 @@ export default function Navbar() {
               <ShieldCheck className="h-3.5 w-3.5 text-accent" />
               {lang === 'hi' ? '100% गोपनीय परामर्श' : '100% Confidential Consultation'}
             </span>
-            <LanguageToggle tone="light" />
           </div>
         </div>
       </div>
@@ -57,7 +51,7 @@ export default function Navbar() {
       <div className="bg-primary border-b border-white/10 shadow-lg">
         <div className="container-max h-[68px] flex items-center justify-between gap-6">
           {/* Logo */}
-          <Logo variant="light" />
+          <Logo variant="dark" />
 
           {/* Desktop nav (centered) */}
           <nav className="hidden lg:flex items-center gap-1 mx-auto">
@@ -132,7 +126,7 @@ export default function Navbar() {
             <div className="container-max py-4 flex flex-col gap-1">
               {/* Emergency banner inside mobile menu */}
               <a
-                href={phone.tel}
+                href={`mailto:${email}`}
                 onClick={closeMenu}
                 className="flex items-center gap-3 rounded-xl bg-accent/10 border border-accent/30 px-4 py-3 mb-2"
               >
@@ -142,11 +136,11 @@ export default function Navbar() {
                 </span>
                 <div className="flex-1">
                   <div className="text-[11px] font-bold tracking-wider uppercase text-accent">
-                    {lang === 'hi' ? '24/7 हेल्पलाइन' : '24/7 Helpline'}
+                    {lang === 'hi' ? '24/7 सहायता' : '24/7 Support'}
                   </div>
-                  <div className="text-sm font-bold text-white">{phone.display}</div>
+                  <div className="text-sm font-bold text-white">{email}</div>
                 </div>
-                <PhoneCall className="h-4 w-4 text-accent" />
+                <Mail className="h-4 w-4 text-accent" />
               </a>
 
               {/* Nav links */}
@@ -169,14 +163,7 @@ export default function Navbar() {
                 </NavLink>
               ))}
 
-              {/* Footer actions */}
               <div className="pt-4 mt-2 border-t border-white/10 flex flex-col gap-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-white/50 uppercase tracking-wider font-semibold">
-                    {lang === 'hi' ? 'भाषा' : 'Language'}
-                  </span>
-                  <LanguageToggle tone="light" />
-                </div>
                 <div className="grid grid-cols-2 gap-2">
                   <a
                     href={whatsapp}
