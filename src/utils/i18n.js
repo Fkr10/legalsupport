@@ -24,10 +24,8 @@ const dict = {
       seoDesc:
         'क्रिमिनल डिफेंस प्राथमिकता के साथ तेज़, स्पष्ट और भरोसेमंद कानूनी सहायता।',
       heroEyebrow: 'क्रिमिनल डिफेंस प्राथमिकता • तत्काल प्रतिनिधित्व',
-      heroTitle:
-        'स्पष्ट कानूनी रणनीति, तेज़ कार्रवाई, और व्यवस्थित केस तैयारी।',
-      heroDesc:
-        'LegalSupportNow उन लोगों के लिए है जिन्हें निर्णायक कानूनी मदद चाहिए—खासकर क्रिमिनल मामलों में। पहली कॉल से अगले कदम तक, हम आपको स्पष्टता और गति के साथ गाइड करते हैं।',
+      heroTitle: 'उत्तराखंड में विशेषज्ञ कानूनी सहायता और क्रिमिनल डिफेंस',
+      heroDesc: 'LegalSupportNow तत्काल मामलों के लिए तेज़, स्पष्ट और भरोसेमंद कानूनी सहायता प्रदान करता है। बेल एप्लीकेशन, FIR समीक्षा और कोर्ट-रेडी रणनीतियों में विशेषज्ञ।',
       heroPrimaryCta: 'अभी कानूनी मदद लें',
       heroSecondaryCta: 'व्हाट्सऐप पर सलाह',
       stats1k: '12+',
@@ -212,9 +210,8 @@ const dict = {
       seoDesc:
         'Fast, clear, and trustworthy legal support with a criminal-defense priority.',
       heroEyebrow: 'Criminal defense priority • urgent representation',
-      heroTitle: 'Clear legal strategy, fast action, and disciplined case preparation.',
-      heroDesc:
-        'LegalSupportNow is built for people who need decisive legal help—especially in criminal matters. From the first call to next steps, we guide you with clarity and speed.',
+      heroTitle: 'Expert Legal Support & Criminal Defense in Uttarakhand',
+      heroDesc: 'LegalSupportNow provides fast, clear, and trustworthy legal assistance for urgent matters. Specializing in bail applications, FIR reviews, and courtroom-ready strategies.',
       heroPrimaryCta: 'Get Legal Help Now',
       heroSecondaryCta: 'WhatsApp Consultation',
       stats1k: '12+',

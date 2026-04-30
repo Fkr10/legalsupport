@@ -121,7 +121,7 @@ export default function Navbar() {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.22, ease: 'easeOut' }}
-            className="lg:hidden overflow-hidden bg-[#0d1f30] border-t border-white/10"
+            className="lg:hidden overflow-hidden bg-primary border-t border-white/10 shadow-2xl"
           >
             <div className="container-max py-4 flex flex-col gap-1">
               {/* Emergency banner inside mobile menu */}

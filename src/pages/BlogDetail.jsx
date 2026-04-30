@@ -42,8 +42,32 @@ export default function BlogDetail() {
         title={blog.title}
         description={blog.content?.[0]}
         canonicalPath={`/blog/${blog.slug}`}
-        ogImage={`/storage/blogs/${blog.slug}.svg`}
-      />
+        ogImage={getBlogImage(blog.slug)}
+        ogType="article"
+      >
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": blog.title,
+            "image": `https://legalsupportnow.in${getBlogImage(blog.slug)}`,
+            "author": {
+              "@type": "Person",
+              "name": blog.author
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "LegalSupportNow",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://legalsupportnow.in/logo.svg"
+              }
+            },
+            "datePublished": blog.date,
+            "description": blog.content?.[0]
+          })}
+        </script>
+      </Seo>
 
       <section className="container-max py-12 sm:py-16">
         <Motion.div variants={stagger(0.12)} initial="hidden" animate="show">

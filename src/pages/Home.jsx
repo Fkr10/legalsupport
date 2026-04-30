@@ -50,11 +50,11 @@ export default function Home() {
       />
 
       {/* ── Hero ── */}
-      <section className="relative min-h-screen flex items-center">
+      <section className="relative min-h-[85vh] sm:min-h-screen flex items-center pt-20 sm:pt-0">
         <div className="absolute inset-0 -z-10">
           <img
             src={getHeroImage()}
-            alt=""
+            alt="Expert Legal Support & Criminal Defense Uttarakhand"
             className="h-full w-full object-cover"
             loading="eager"
           />
@@ -99,7 +99,7 @@ export default function Home() {
               </div>
 
               {/* Stats row */}
-              <div className="mt-10 grid grid-cols-3 gap-3">
+              <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {[
                   { k: t('home.stats1k'), v: t('home.stats1v'), icon: <Timer className="h-4 w-4 text-accent" /> },
                   { k: t('home.stats2k'), v: t('home.stats2v'), icon: <FileText className="h-4 w-4 text-accent" /> },
@@ -302,7 +302,7 @@ export default function Home() {
                       <div className="relative">
                         <img
                           src={getPracticeAreaImage(a.title)}
-                          alt=""
+                          alt={`${a.title} Legal Support in Uttarakhand`}
                           className="h-44 w-full object-cover"
                           loading="lazy"
                         />
