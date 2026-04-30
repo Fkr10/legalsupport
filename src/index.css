@@ -1,8 +1,54 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+/* ─── Fonts ─── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Source+Code+Pro:wght@500;700&family=Noto+Sans+Devanagari:wght@300;400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ─── CSS Design Tokens (DESIGN.md — LegalSupportNow: Navy + Gold) ─── */
+:root {
+  /* DESIGN.md Navy scale */
+  --clr-navy:        #0B1C2C;
+  --clr-navy-dark:   #08151F;
+  --clr-navy-mid:    #122233;
+  --clr-label:       #1F3650;
+  --clr-body:        #4B5563;
+  --clr-muted:       #6B7280;
+
+  /* DESIGN.md Gold — primary interactive */
+  --clr-gold:        #C8A951;
+  --clr-gold-h:      #B8960B;
+  --clr-gold-l:      #E8D38A;
+  --clr-gold-sub:    rgba(200,169,81,0.12);
+  --clr-gold-border: rgba(200,169,81,0.30);
+
+  /* Surfaces */
+  --clr-surface:     #FFFFFF;
+  --clr-surface-alt: #F8F9FA;
+  --clr-border:      #E5E7EB;
+  --clr-border-navy: rgba(11,28,44,0.12);
+
+  /* Semantic */
+  --clr-success:     #15BE53;
+  --clr-success-txt: #0D7A34;
+  --clr-warning:     #D97706;
+  --clr-error:       #DC2626;
+
+  /* DESIGN.md navy-tinted shadows */
+  --shadow-ambient:  rgba(11,28,44,0.06) 0px 3px 6px 0px;
+  --shadow-standard: rgba(11,28,44,0.08) 0px 15px 35px 0px;
+  --shadow-elevated: rgba(11,28,44,0.25) 0px 30px 45px -30px, rgba(0,0,0,0.08) 0px 18px 36px -18px;
+  --shadow-deep:     rgba(11,28,44,0.35) 0px 14px 21px -14px, rgba(0,0,0,0.10) 0px 8px 17px -8px;
+  --shadow-gold:     rgba(200,169,81,0.25) 0px 8px 20px 0px;
+
+  /* Radii (DESIGN.md: 4-8px conservative) */
+  --radius-sm: 4px;
+  --radius-md: 5px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+}
+
+/* ─── Base ─── */
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -10,204 +56,566 @@ html {
 }
 
 body {
-  @apply bg-background text-secondary antialiased;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--clr-surface);
+  color: var(--clr-body);
+  font-family: 'Inter', 'SF Pro Display', system-ui, -apple-system, sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.4;
 }
+
+/* Hindi locale font override */
+html:lang(hi) body,
+html:lang(hi) h1,
+html:lang(hi) h2,
+html:lang(hi) h3,
+html:lang(hi) h4 {
+  font-family: 'Noto Sans Devanagari', 'Inter', system-ui, sans-serif;
+}
+
+/* ─── Headings: DESIGN.md type scale ─── */
+h1 {
+  color: var(--clr-navy);
+  font-weight: 300;
+  letter-spacing: -0.64px;
+  line-height: 1.10;
+  font-size: clamp(2rem, 4vw + 1rem, 3.5rem);
+}
+
+h2 {
+  color: var(--clr-navy);
+  font-weight: 300;
+  letter-spacing: -0.64px;
+  line-height: 1.10;
+  font-size: clamp(1.75rem, 3vw + 0.5rem, 2rem);
+}
+
+h3 {
+  color: var(--clr-navy);
+  font-weight: 300;
+  letter-spacing: -0.26px;
+  line-height: 1.12;
+  font-size: clamp(1.375rem, 2vw + 0.5rem, 1.625rem);
+}
+
+h4 {
+  color: var(--clr-navy);
+  font-weight: 300;
+  letter-spacing: -0.22px;
+  line-height: 1.10;
+  font-size: 1.375rem;
+}
+
+p {
+  line-height: 1.4;
+  color: var(--clr-body);
+}
+
+img { display: block; }
 
 ::selection {
-  background: rgba(200, 169, 81, 0.25);
-  color: #0B1C2C;
+  background: rgba(200,169,81,0.20);
+  color: var(--clr-navy);
 }
 
-@layer base {
-  html:lang(hi) body {
-    font-family: "Noto Sans Devanagari", Inter, system-ui, Segoe UI, Roboto, sans-serif;
-  }
-
-  html:lang(hi) h1,
-  html:lang(hi) h2,
-  html:lang(hi) h3,
-  html:lang(hi) h4 {
-    font-family: "Noto Sans Devanagari", Inter, system-ui, Segoe UI, Roboto, sans-serif;
-  }
-
-  h1, h2, h3, h4 {
-    @apply font-sans font-semibold text-primary tracking-tight;
-    letter-spacing: -0.01em;
-  }
-
-  p {
-    @apply leading-relaxed;
-    line-height: 1.75;
-  }
-
-  img {
-    display: block;
-  }
+/* ─── Focus ring (DESIGN.md: gold) ─── */
+:focus-visible {
+  outline: 2px solid var(--clr-gold);
+  outline-offset: 2px;
 }
 
+/* ─── Layout ─── */
 @layer utilities {
-  /* ─── App Background ─── */
-  .app-bg {
-    background:
-      radial-gradient(900px 500px at 15% -5%, rgba(200, 169, 81, 0.18), transparent 55%),
-      radial-gradient(700px 450px at 85% 5%, rgba(200, 169, 81, 0.06), transparent 50%),
-      linear-gradient(175deg, #0B1C2C 0%, #0F172A 40%, #111827 100%);
-  }
-
-  /* ─── Section Backgrounds ─── */
-  .section-light {
-    @apply bg-white;
-  }
-  .section-alt {
-    @apply bg-[#F3F4F6];
-  }
-  .section-dark {
-    @apply bg-primary text-white;
-  }
-
-  /* ─── Glass Utilities ─── */
-  /* Dark glass: for hero overlays, dark panels */
-  .glass {
-    @apply backdrop-blur-md border border-white/15 shadow-glass;
-    background: rgba(11, 28, 44, 0.70);
-  }
-
-  /* Light glass: for cards in light sections — nearly solid for readability */
-  .glass-light {
-    @apply border border-black/[0.07] bg-white shadow-card;
-  }
-
-  /* Strong glass: for blog/reading content — fully solid */
-  .glass-strong {
-    @apply border border-black/[0.07] bg-white shadow-soft;
-  }
-
-  /* Dark card panel: solid dark for dark-bg content areas */
-  .glass-dark-card {
-    @apply border border-white/10 shadow-glass;
-    background: rgba(11, 28, 44, 0.82);
-    backdrop-filter: blur(12px);
-  }
-
-  /* Input fields */
-  .glass-input {
-    @apply w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-secondary outline-none transition
-      placeholder:text-secondary/40
-      focus:border-accent/50 focus:ring-2 focus:ring-accent/15
-      hover:border-black/20;
-    min-height: 2.75rem;
-  }
-
-  /* CTA button glass variant */
-  .glass-button {
-    @apply backdrop-blur-md border border-white/25 bg-white/10 text-white hover:bg-white/20 transition-all;
-  }
-
-  /* ─── Layout ─── */
   .container-max {
-    @apply mx-auto w-full max-w-content px-4 sm:px-6;
+    @apply mx-auto w-full px-4 sm:px-6;
+    max-width: 1080px;
   }
 
-  /* ─── Mobile-First Typography ─── */
-  /* Improved mobile heading sizes */
-  h1 {
-    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+  /* ─── Section Backgrounds (DESIGN.md: white ↔ surface-alt ↔ navy-dark) ─── */
+  .section-light  { background-color: #ffffff; }
+  .section-alt    { background-color: var(--clr-surface-alt); }
+  .section-dark   { background-color: var(--clr-navy-dark); color: #ffffff; }
+
+  /* ─── DESIGN.md Cards (Navy-tinted shadows) ─── */
+  .stripe-card {
+    background: #ffffff;
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-elevated);
   }
-  h2 {
-    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
+  .stripe-card-ambient {
+    background: #ffffff;
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-ambient);
   }
-  h3 {
-    @apply text-lg sm:text-xl md:text-2xl;
+  .stripe-card-dark {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: var(--radius-lg);
   }
-  h4 {
-    @apply text-base sm:text-lg;
+  .stripe-card-gold {
+    background: rgba(200,169,81,0.06);
+    border: 1px solid rgba(200,169,81,0.30);
+    border-radius: var(--radius-lg);
   }
 
-  /* Clean prose for blog reading */
+  /* ─── DESIGN.md Buttons — Gold primary, navy secondary ─── */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--clr-gold);
+    color: var(--clr-navy);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    padding: 10px 20px;
+    border-radius: var(--radius-sm);
+    border: none;
+    cursor: pointer;
+    transition: background 150ms ease, box-shadow 150ms ease;
+    min-height: 44px;
+    white-space: nowrap;
+  }
+  .btn-primary:hover  { background: var(--clr-gold-h); box-shadow: var(--shadow-gold); }
+  .btn-primary:active { background: var(--clr-gold-h); }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--clr-gold);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    padding: 10px 20px;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(200,169,81,0.40);
+    cursor: pointer;
+    transition: background 150ms ease;
+    min-height: 44px;
+    white-space: nowrap;
+  }
+  .btn-ghost:hover { background: rgba(200,169,81,0.08); }
+
+  .btn-dark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--clr-navy);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    padding: 10px 20px;
+    border-radius: var(--radius-sm);
+    border: none;
+    cursor: pointer;
+    transition: opacity 150ms ease;
+    min-height: 44px;
+    white-space: nowrap;
+  }
+  .btn-dark:hover { opacity: 0.88; }
+
+  .btn-outline-white {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    padding: 10px 20px;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255,255,255,0.30);
+    cursor: pointer;
+    transition: background 150ms ease;
+    min-height: 44px;
+    white-space: nowrap;
+  }
+  .btn-outline-white:hover { background: rgba(255,255,255,0.08); }
+
+  /* ─── Inputs — gold focus ─── */
+  .stripe-input {
+    width: 100%;
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-sm);
+    padding: 10px 14px;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--clr-navy);
+    background: #ffffff;
+    outline: none;
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+    min-height: 44px;
+  }
+  .stripe-input::placeholder { color: var(--clr-muted); opacity: 0.8; }
+  .stripe-input:focus {
+    border-color: var(--clr-gold);
+    box-shadow: 0 0 0 3px rgba(200,169,81,0.15);
+  }
+  .glass-input { @apply stripe-input; }
+
+  /* ─── Badges — gold eyebrow ─── */
+  .badge-success {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(21,190,83,0.15);
+    color: var(--clr-success-txt);
+    border: 1px solid rgba(21,190,83,0.30);
+    border-radius: var(--radius-sm);
+    padding: 1px 6px;
+    font-size: 0.625rem;
+    font-weight: 300;
+  }
+  .badge-neutral {
+    display: inline-flex;
+    align-items: center;
+    background: var(--clr-surface-alt);
+    color: var(--clr-navy);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-sm);
+    padding: 0 6px;
+    font-size: 0.6875rem;
+    font-weight: 400;
+  }
+  /* DESIGN.md: gold uppercase eyebrow */
+  .badge-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--clr-gold);
+  }
+
+  /* ─── Prose (blog body) ─── */
   .prose-clean p {
     font-size: clamp(1rem, 1vw + 0.75rem, 1.0625rem);
     line-height: 1.875;
-    color: rgba(31, 41, 55, 0.92);
+    color: rgba(6,27,49,0.85);
     margin-bottom: 1.5rem;
+    font-weight: 300;
   }
-  .prose-clean p:last-child {
-    margin-bottom: 0;
-  }
+  .prose-clean p:last-child { margin-bottom: 0; }
 
-  /* ─── Touch-Friendly UI ─── */
-  /* Ensure buttons are at least 44px tall on mobile for touch */
-  button, 
-  a[role="button"],
-  input[type="button"],
-  input[type="submit"],
-  input[type="reset"] {
-    min-height: 2.75rem;
-  }
-
-  @media (max-width: 640px) {
-    button,
-    a[role="button"],
-    input[type="button"],
-    input[type="submit"],
-    input[type="reset"] {
-      min-height: 3rem;
-    }
-  }
-
-  /* ─── Interactive ─── */
+  /* ─── Link underline ─── */
   .link-underline {
     background-image: linear-gradient(currentColor, currentColor);
     background-position: 0 100%;
     background-repeat: no-repeat;
-    background-size: 0% 1.5px;
-    transition: background-size 220ms ease;
+    background-size: 0% 1px;
+    transition: background-size 200ms ease;
   }
-  .link-underline:hover {
-    background-size: 100% 1.5px;
+  .link-underline:hover { background-size: 100% 1px; }
+
+  /* ─── Image overlays ─── */
+  .img-overlay-dark  { background: linear-gradient(to top, rgba(6,27,49,0.80) 0%, rgba(6,27,49,0.20) 60%, transparent 100%); }
+  .img-overlay-light { background: linear-gradient(to top, rgba(6,27,49,0.55) 0%, transparent 100%); }
+
+  /* ─── Legacy glass aliases (mapped to correct navy-gold theme) ─── */
+  .glass            { @apply stripe-card-dark; }
+  .glass-light      { @apply stripe-card; }
+  .glass-strong     { @apply stripe-card; }
+  .glass-dark-card  { @apply stripe-card-dark; }
+  .glass-button     { @apply btn-ghost; }
+
+  /* ─── Touch target enforcement ─── */
+  button,
+  a[role="button"],
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"] {
+    min-height: 44px;
   }
 
-  /* ─── Image overlay helpers ─── */
-  .img-overlay-dark {
-    background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
-  }
-  .img-overlay-light {
-    background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 100%);
-  }
-
-  /* ─── Mobile Spacing ─── */
-  /* Better spacing for mobile sections */
-  @media (max-width: 640px) {
-    .section-mobile-pad {
-      @apply py-8 px-4;
-    }
-    
-    .section-mobile-pad-lg {
-      @apply py-12 px-4;
-    }
+  /* ─── Enhanced Typography for Legal Niche ─── */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', 'SF Pro Display', system-ui, sans-serif;
+    color: var(--clr-navy);
+    margin-bottom: 0.75rem;
   }
 
-  /* ─── Responsive Grid ─── */
-  /* Better grid layouts for mobile */
-  @media (max-width: 640px) {
-    .grid-responsive {
-      @apply grid gap-4;
-      grid-template-columns: 1fr;
-    }
+  /* ─── Section Spacing Optimization ─── */
+  section {
+    padding-top: clamp(2rem, 8vw, 5rem);
+    padding-bottom: clamp(2rem, 8vw, 5rem);
   }
 
-  @media (min-width: 641px) and (max-width: 1024px) {
-    .grid-responsive {
-      @apply grid gap-5;
-      grid-template-columns: repeat(2, 1fr);
-    }
+  section.compact {
+    padding-top: clamp(1.5rem, 6vw, 3rem);
+    padding-bottom: clamp(1.5rem, 6vw, 3rem);
   }
 
-  @media (min-width: 1025px) {
-    .grid-responsive {
-      @apply grid gap-6;
-      grid-template-columns: repeat(3, 1fr);
-    }
+  /* ─── Improved Form Styling for Legal Forms ─── */
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: var(--clr-label);
+    letter-spacing: 0.01em;
+  }
+
+  input, textarea, select {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 300;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  input[type="submit"],
+  button[type="submit"] {
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+
+  /* ─── Improved List Styling ─── */
+  ul, ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.75rem;
+    color: var(--clr-body);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  li strong {
+    color: var(--clr-navy);
+    font-weight: 400;
+  }
+
+  /* ─── Link Styling ─── */
+  a {
+    color: var(--clr-gold);
+    text-decoration: none;
+    transition: color 150ms ease;
+  }
+
+  a:hover {
+    color: var(--clr-gold-h);
+  }
+
+  /* Dark section links */
+  .section-dark a {
+    color: var(--clr-gold-l);
+  }
+
+  .section-dark a:hover {
+    color: var(--clr-gold);
+  }
+
+  /* ─── Table Styling for Legal Tables ─── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+    font-size: 0.9375rem;
+  }
+
+  thead {
+    background-color: var(--clr-surface-alt);
+    border-bottom: 1px solid var(--clr-border);
+  }
+
+  th {
+    padding: 0.875rem 1rem;
+    text-align: left;
+    font-weight: 400;
+    color: var(--clr-label);
+    letter-spacing: 0.01em;
+  }
+
+  td {
+    padding: 0.875rem 1rem;
+    border-bottom: 1px solid var(--clr-border);
+    color: var(--clr-body);
+    font-weight: 300;
+  }
+
+  tbody tr:hover {
+    background-color: rgba(200, 169, 81, 0.04);
+  }
+
+  /* ─── Blockquote Styling ─── */
+  blockquote {
+    margin: 2rem 0;
+    padding: 1.5rem 0 1.5rem 1.5rem;
+    border-left: 3px solid var(--clr-gold);
+    background-color: rgba(200, 169, 81, 0.04);
+    font-style: italic;
+    color: var(--clr-body);
+    font-weight: 300;
+  }
+
+  blockquote strong {
+    font-weight: 400;
+    color: var(--clr-navy);
+  }
+
+  /* ─── Code Block Styling ─── */
+  code {
+    background-color: var(--clr-surface-alt);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-sm);
+    padding: 0.25rem 0.5rem;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.875rem;
+    color: var(--clr-navy);
+  }
+
+  pre {
+    background-color: var(--clr-navy);
+    border: 1px solid rgba(200, 169, 81, 0.2);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  pre code {
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    padding: 0;
+  }
+
+  /* ─── Utility Classes for Spacing Optimization ─── */
+  .mt-compact { margin-top: 0.5rem; }
+  .mb-compact { margin-bottom: 0.5rem; }
+  .gap-compact { gap: 0.5rem; }
+
+  .mt-relaxed { margin-top: 2rem; }
+  .mb-relaxed { margin-bottom: 2rem; }
+  .gap-relaxed { gap: 2rem; }
+
+  .p-compact { padding: 0.75rem; }
+  .p-relaxed { padding: 2rem; }
+
+  /* ─── Print Styles ─── */
+  @media print {
+    body { background-color: #ffffff; }
+    a { color: var(--clr-navy); text-decoration: underline; }
+    .no-print { display: none !important; }
+  }
+
+  /* ─── Enhanced Vertical Rhythm (8px base) ─── */
+  h1, h2, h3, h4 { margin-bottom: 1rem; }
+  p + p { margin-top: 1rem; }
+  ul + p, ol + p { margin-top: 1.5rem; }
+
+  /* ─── Improved Select Styling ─── */
+  select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%230B1C2C' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 36px;
+  }
+
+  /* ─── Better Focus States for Accessibility ─── */
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid var(--clr-gold);
+    outline-offset: 2px;
+  }
+
+  /* ─── Disabled State Improvements ─── */
+  input:disabled,
+  textarea:disabled,
+  select:disabled {
+    background-color: var(--clr-surface-alt);
+    cursor: not-allowed;
+    opacity: 0.65;
+  }
+
+  /* ─── Link Hover States ─── */
+  a {
+    transition: color 200ms ease;
+  }
+
+  /* ─── Enhanced Contrast for Legal Content ─── */
+  .high-contrast {
+    background-color: var(--clr-navy);
+    color: #ffffff;
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .high-contrast h2,
+  .high-contrast h3,
+  .high-contrast h4 {
+    color: var(--clr-gold-l);
+  }
+
+  /* ─── Gradient Accents for Legal Authority ─── */
+  .gradient-accent {
+    background: linear-gradient(135deg, var(--clr-navy) 0%, var(--clr-navy-dark) 100%);
+  }
+
+  .gradient-gold-accent {
+    background: linear-gradient(135deg, var(--clr-gold) 0%, var(--clr-gold-h) 100%);
+  }
+
+  /* ─── Improved Transparency for Hierarchy ─── */
+  .text-hierarchy-1 { font-weight: 400; color: var(--clr-navy); }
+  .text-hierarchy-2 { font-weight: 400; color: var(--clr-label); }
+  .text-hierarchy-3 { font-weight: 300; color: var(--clr-body); }
+  .text-hierarchy-4 { font-weight: 300; color: var(--clr-muted); }
+
+  /* ─── Better Spacing for Dense Content ─── */
+  .content-dense {
+    line-height: 1.6;
+  }
+
+  .content-relaxed {
+    line-height: 1.8;
+    letter-spacing: 0.3px;
+  }
+
+  /* ─── Legal Document Styling ─── */
+  .legal-doc {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.875rem;
+    color: var(--clr-navy);
+    background: var(--clr-surface-alt);
+    padding: 1.5rem;
+    border-left: 3px solid var(--clr-gold);
+    border-radius: var(--radius-lg);
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  /* ─── Authority Indicators ─── */
+  .authority-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: rgba(200, 169, 81, 0.1);
+    border: 1px solid rgba(200, 169, 81, 0.2);
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--clr-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 }
+
 

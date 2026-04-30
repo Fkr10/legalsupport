@@ -17,7 +17,7 @@ export default function Logo({ variant = 'light' }) {
         src={logoSrc}
         alt="LegalSupportNow - Professional Legal Support"
         className={[
-          'h-auto w-40 transition-all duration-300',
+          'h-auto w-60 transition-all duration-300',
           'group-hover:scale-105'
         ].join(' ')}
         loading="eager"

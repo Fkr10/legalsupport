@@ -1,23 +1,29 @@
 import { useDisclaimerAccepted } from '../context/DisclaimerContext.jsx'
 import GlassButton from './GlassButton.jsx'
 
-// Keep existing `Button` API/variants, map to GlassButton styles.
+/**
+ * Public Button API — maps semantic variant names to DESIGN.md GlassButton variants.
+ * accent    → stripe purple primary (CTA)
+ * secondary → ghost outline (purple text, purple border)
+ * dark      → navy bg, white text
+ * ghost     → ghost outline
+ * glass     → dark-outline (for use on #08151F dark sections)
+ */
 export default function Button(props) {
-  const { variant = 'primary', ...rest } = props
+  const { variant = 'accent', ...rest } = props
   const disclaimerAccepted = useDisclaimerAccepted()
-
-  // Disable button if disclaimer not accepted
   const disabled = !disclaimerAccepted || props.disabled
 
-  if (variant === 'accent') {
-    return <GlassButton variant="primary" {...rest} disabled={disabled} />
+  const map = {
+    accent:    'primary',
+    primary:   'primary',
+    secondary: 'ghost',
+    ghost:     'ghost',
+    dark:      'dark',
+    glass:     'dark-outline',
   }
 
-  if (variant === 'ghost') {
-    return <GlassButton variant="secondary" {...rest} disabled={disabled} />
-  }
-
-  // Default: solid, high-contrast primary button.
-  return <GlassButton variant="dark" {...rest} disabled={disabled} />
+  return <GlassButton variant={map[variant] ?? 'primary'} {...rest} disabled={disabled} />
 }
+
 

@@ -50,7 +50,7 @@ export function DisclaimerProvider({ children }) {
               className="bg-surface rounded-2xl shadow-lift w-full max-w-5xl max-h-[95vh] overflow-hidden flex flex-col border border-secondary/10"
             >
               {/* Header - Minimal */}
-              <div className="bg-gradient-to-r from-primary via-primary to-secondary text-white px-6 py-3 border-b border-accent/20">
+              <div className="bg-gradient-to-r from-primary via-primary to-secondary text-white px-6 py-3 border-b border-[#C8A951]/20">
                 <div className="flex items-center gap-3">
                   <img
                     src="/storage/brand/favicon.svg"
@@ -61,32 +61,32 @@ export function DisclaimerProvider({ children }) {
                   />
                   <h2 className="text-lg font-bold tracking-tight text-white">Important Disclaimer</h2>
                 </div>
-                <div className="w-8 h-0.5 bg-accent rounded-full mt-2 ml-9"></div>
+                <div className="w-8 h-0.5 bg-[#C8A951] rounded-full mt-2 ml-9"></div>
               </div>
 
               {/* Content - Maximized */}
               <div className="flex-1 overflow-y-auto px-5 py-4 bg-white">
                 <div className="space-y-4">
-                  <p className="text-secondary leading-relaxed text-sm font-medium">
+                  <p className="text-[#4B5563] leading-relaxed text-sm font-medium">
                     This website is intended solely for informational purposes and does not constitute advertising or solicitation, in accordance with the rules of the Bar Council of India/Bar Counsel of Delhi. By accessing this website, you confirm that you are seeking information about the advocate on your own accord.
                   </p>
                   
-                  <div className="bg-accent/15 border-l-4 border-accent p-3 rounded-lg">
-                    <p className="text-secondary text-xs leading-relaxed font-semibold">
+                  <div className="bg-[#C8A951]/15 border-l-4 border-[#C8A951] p-3 rounded-lg">
+                    <p className="text-[#4B5563] text-xs leading-relaxed font-semibold">
                       ⚠️ Please read and understand this disclaimer carefully before proceeding.
                     </p>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-3 mt-4">
-                    <div className="bg-primary/8 p-3 rounded-lg border border-primary/20">
-                      <h3 className="font-bold text-primary mb-1 text-xs">📋 Scope</h3>
-                      <p className="text-secondary text-xs leading-relaxed font-medium">
+                    <div className="bg-[#08151F]/8 p-3 rounded-lg border border-primary/20">
+                      <h3 className="font-bold text-[#0B1C2C] mb-1 text-xs">📋 Scope</h3>
+                      <p className="text-[#4B5563] text-xs leading-relaxed font-medium">
                         Information provided is for general legal knowledge only, not specific legal advice.
                       </p>
                     </div>
-                    <div className="bg-primary/8 p-3 rounded-lg border border-primary/20">
-                      <h3 className="font-bold text-primary mb-1 text-xs">⚖️ Professional Counsel</h3>
-                      <p className="text-secondary text-xs leading-relaxed font-medium">
+                    <div className="bg-[#08151F]/8 p-3 rounded-lg border border-primary/20">
+                      <h3 className="font-bold text-[#0B1C2C] mb-1 text-xs">⚖️ Professional Counsel</h3>
+                      <p className="text-[#4B5563] text-xs leading-relaxed font-medium">
                         For legal matters, consult with a qualified attorney in your jurisdiction.
                       </p>
                     </div>
@@ -98,7 +98,7 @@ export function DisclaimerProvider({ children }) {
               <div className="bg-background px-5 py-3 border-t border-secondary/10 flex-shrink-0">
                 <button
                   onClick={handleAccept}
-                  className="w-full px-5 py-2.5 bg-gradient-to-r from-accent to-accent/90 text-primary font-bold rounded-lg hover:shadow-glow transition-all duration-300 uppercase tracking-wide text-xs"
+                  className="w-full px-5 py-2.5 bg-gradient-to-r from-accent to-accent/90 text-[#0B1C2C] font-bold rounded-lg hover:shadow-glow transition-all duration-300 uppercase tracking-wide text-xs"
                 >
                   I Understand & Accept
                 </button>

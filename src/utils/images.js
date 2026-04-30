@@ -32,8 +32,7 @@ export function getAboutHeaderImage() {
 }
 
 export function getLawyerPortrait() {
-  // Professional portrait / legal professional
-  return photo('1589829085413-56de8ae18c73', 600, 800)
+  return '/profile.webp'
 }
 
 export function getOfficeImage() {

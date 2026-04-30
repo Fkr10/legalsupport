@@ -6,9 +6,47 @@
     },
     "whatsapp": "https://wa.me/917452819652?text=Hi%20I%20need%20legal%20help",
     "email": "aasifahmadnahalvi11@gmail.com",
-    "address": "Masuri Ghaziabad, near thana masuri, ghaziabad, Uttar Pradesh, India 201015",
-    "mapsEmbed": "https://www.google.com/maps?q=DLF%20Plaza%20M.G.%20Road%20Gurugram&output=embed"
+    "address": "CH F-214, Karkardooma Court, Delhi – 110032 (Principal Office)",
+    "mapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.8!2d77.3054!3d28.6622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce4fa4f18e3%3A0x2a5f0441da8a17bd!2sKarkardooma+Court!5e0!3m2!1sen!2sin!4v1"
   },
+  "offices": [
+    {
+      "id": "karkardooma",
+      "label": "Karkardooma Court (Principal)",
+      "address": "CH F-214, Karkardooma Court, Delhi – 110032",
+      "lat": 28.6622,
+      "lng": 77.3054,
+      "mapsLink": "https://maps.google.com/?q=Karkardooma+Court+Delhi+110032",
+      "mapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.0!2d77.3054!3d28.6622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce4fa4f18e3%3A0x2a5f0441da8a17bd!2sKarkardooma+Court!5e0!3m2!1sen!2sin!4v1"
+    },
+    {
+      "id": "shahadara-mall",
+      "label": "Shahadara — Aditya Mega Mall",
+      "address": "S-54, Aditya Mega Mall, Shahadara, Delhi – 110032",
+      "lat": 28.6705,
+      "lng": 77.2955,
+      "mapsLink": "https://maps.google.com/?q=Aditya+Mega+Mall+Shahadara+Delhi+110032",
+      "mapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.5!2d77.2955!3d28.6705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce555b0e7c6bd%3A0x0!2zQWRpdHlhIE1lZ2EgTWFsbA!5e0!3m2!1sen!2sin!4v1"
+    },
+    {
+      "id": "saket",
+      "label": "Saket Court",
+      "address": "CH 165, Lawyer Block, Saket Court, Delhi – 110017",
+      "lat": 28.5244,
+      "lng": 77.2167,
+      "mapsLink": "https://maps.google.com/?q=Saket+Court+Complex+Delhi+110017",
+      "mapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.0!2d77.2167!3d28.5244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce1d9e9c49e9b%3A0xe0cfc09b23a6d60!2sSaket+District+Court!5e0!3m2!1sen!2sin!4v1"
+    },
+    {
+      "id": "keshavpuram",
+      "label": "Keshav Puram (North West Delhi)",
+      "address": "Opposite Keshav Puram Metro Station, 2nd Floor, Commercial Building, North West Delhi – 110035",
+      "lat": 28.6987,
+      "lng": 77.1614,
+      "mapsLink": "https://maps.google.com/?q=Keshav+Puram+Metro+Station+North+West+Delhi+110035",
+      "mapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3498.0!2d77.1614!3d28.6987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d04b0e4b7e4b5%3A0x0!2zS2VzaGF2cHVyYW0rTWV0cm8!5e0!3m2!1sen!2sin!4v1"
+    }
+  ],
   "caseTypes": [
     "Criminal (Bail / FIR / Trial)",
     "Cyber (Online Fraud / Impersonation)",

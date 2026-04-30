@@ -192,7 +192,7 @@ src/data/
     "name": "Adv. Name",
     "title": "Professional Title",
     "location": "City",
-    "experience": "12+ years",
+    "experience": "7+ years",
     "highlights": [
       "Key strength 1",
       "Key strength 2"

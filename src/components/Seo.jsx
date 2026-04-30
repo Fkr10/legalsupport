@@ -47,7 +47,7 @@ export default function Seo({
           "description": finalDesc,
           "address": {
             "@type": "PostalAddress",
-            "addressLocality": "Uttarakhand",
+            "addressLocality": "Delhi",
             "addressCountry": "IN"
           },
           "contactPoint": {

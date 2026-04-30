@@ -5,12 +5,13 @@ import { Mail, Phone, MapPin, AlertTriangle, ArrowRight } from 'lucide-react'
 import Seo from '../components/Seo.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
 import Button from '../components/Button.jsx'
+import WhatsAppIcon from '../components/WhatsAppIcon.jsx'
 import { fadeUp, stagger } from '../utils/motion.js'
 import { useI18n } from '../utils/i18n.js'
 import { getConsultationImage } from '../utils/images.js'
 import contactData from '../data/contact.json'
 
-const { contact: contactDetails, caseTypes } = contactData
+const { contact: contactDetails, offices, caseTypes } = contactData
 
 export default function Contact() {
   const { t } = useI18n()
@@ -44,54 +45,38 @@ export default function Contact() {
         canonicalPath="/contact"
       />
 
-      {/* Page header */}
-      <section className="bg-primary">
-        <div className="container-max py-16 sm:py-20">
-          <SectionHeading
-            eyebrow={t('contact.eyebrow')}
-            title={t('contact.title')}
-            description={t('contact.desc')}
-            tone="dark"
-          />
-        </div>
-      </section>
+      
 
       {/* Main content */}
-      <section className="section-alt">
+      <section className="bg-[#F8F9FA]">
         <div className="container-max py-12 sm:py-16">
           <Motion.div variants={stagger(0.12)} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-80px' }}>
             <div className="grid gap-8 lg:grid-cols-12 items-start">
-              {/* Form column */}
               <Motion.div variants={fadeUp} className="lg:col-span-7">
-                {/* Contact form */}
-                <div className="bg-white rounded-2xl border border-black/[0.07] shadow-card p-7 sm:p-8">
-                  <div className="text-xl font-bold text-primary">
-                    {t('contact.formTitle')}
-                  </div>
-                  <p className="mt-2 text-sm text-secondary/70">
-                    {t('contact.formDesc')}
-                  </p>
+                <div className="bg-white rounded-[6px] border border-[#E5E7EB] p-7 sm:p-8" style={{boxShadow:'rgba(11,28,44,0.25) 0px 30px 45px -30px,rgba(0,0,0,0.1) 0px 18px 36px -18px'}}>
+                  <div className="text-[20px] font-[400] text-[#0B1C2C] leading-tight">{t('contact.formTitle')}</div>
+                  <p className="mt-2 text-[15px] font-[300] text-[#4B5563] leading-[1.5]">{t('contact.formDesc')}</p>
 
-                  <form className="mt-6 grid gap-4" onSubmit={handleSubmit(onSubmit)}>
-                    <div className="grid gap-4 sm:grid-cols-2">
+                  <form className="mt-8 grid gap-5" onSubmit={handleSubmit(onSubmit)}>
+                    <div className="grid gap-5 sm:grid-cols-2">
                       <div>
-                        <label className="text-sm font-bold text-primary">{t('contact.name')}</label>
+                        <label className="block text-[13px] font-[400] text-[#1F3650] mb-2 tracking-[0.01em]">{t('contact.name')}</label>
                         <input
-                          className="mt-2 glass-input"
+                          className="mt-0 glass-input"
                           placeholder={t('contact.placeholders.name')}
                           {...register('name', { required: t('contact.errors.nameRequired') })}
                         />
                         {errors.name ? (
-                          <div className="mt-1 text-xs font-semibold text-red-600">
+                          <div className="mt-2 text-xs font-[400] text-[#DC2626]">
                             {errors.name.message}
                           </div>
                         ) : null}
                       </div>
 
                       <div>
-                        <label className="text-sm font-bold text-primary">{t('contact.email')}</label>
+                        <label className="block text-[13px] font-[400] text-[#1F3650] mb-2 tracking-[0.01em]">{t('contact.email')}</label>
                         <input
-                          className="mt-2 glass-input"
+                          className="mt-0 glass-input"
                           placeholder={t('contact.placeholders.email')}
                           {...register('email', {
                             required: t('contact.errors.emailRequired'),
@@ -102,18 +87,18 @@ export default function Contact() {
                           })}
                         />
                         {errors.email ? (
-                          <div className="mt-1 text-xs font-semibold text-red-600">
+                          <div className="mt-2 text-xs font-[400] text-[#DC2626]">
                             {errors.email.message}
                           </div>
                         ) : null}
                       </div>
                     </div>
 
-                    <div className="grid gap-4 sm:grid-cols-2">
+                    <div className="grid gap-5 sm:grid-cols-2">
                       <div>
-                        <label className="text-sm font-bold text-primary">{t('contact.phone')}</label>
+                        <label className="block text-[13px] font-[400] text-[#1F3650] mb-2 tracking-[0.01em]">{t('contact.phone')}</label>
                         <input
-                          className="mt-2 glass-input"
+                          className="mt-0 glass-input"
                           placeholder={t('contact.placeholders.phone')}
                           {...register('phone', {
                             required: t('contact.errors.phoneRequired'),
@@ -121,16 +106,16 @@ export default function Contact() {
                           })}
                         />
                         {errors.phone ? (
-                          <div className="mt-1 text-xs font-semibold text-red-600">
+                          <div className="mt-2 text-xs font-[400] text-[#DC2626]">
                             {errors.phone.message}
                           </div>
                         ) : null}
                       </div>
 
                       <div>
-                        <label className="text-sm font-bold text-primary">{t('contact.caseType')}</label>
+                        <label className="block text-[13px] font-[400] text-[#1F3650] mb-2 tracking-[0.01em]">{t('contact.caseType')}</label>
                         <select
-                          className="mt-2 glass-input"
+                          className="mt-0 glass-input"
                           {...register('caseType')}
                         >
                           {caseTypes.map((ct) => (
@@ -143,10 +128,10 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <label className="text-sm font-bold text-primary">{t('contact.message')}</label>
+                      <label className="block text-[13px] font-[400] text-[#1F3650] mb-2 tracking-[0.01em]">{t('contact.message')}</label>
                       <textarea
                         rows={6}
-                        className="mt-2 glass-input"
+                        className="mt-0 glass-input"
                         placeholder={t('contact.placeholders.message')}
                         {...register('message', {
                           required: t('contact.errors.messageRequired'),
@@ -154,13 +139,13 @@ export default function Contact() {
                         })}
                       />
                       {errors.message ? (
-                        <div className="mt-1 text-xs font-semibold text-red-600">
+                        <div className="mt-2 text-xs font-[400] text-[#DC2626]">
                           {errors.message.message}
                         </div>
                       ) : null}
                     </div>
 
-                    <div className="flex flex-col sm:flex-row gap-3 sm:items-center">
+                    <div className="flex flex-col sm:flex-row gap-3 sm:items-center pt-2">
                       <Button type="submit" disabled={isSubmitting} variant="accent">
                         {isSubmitting ? t('contact.sending') : t('contact.submit')} <ArrowRight className="h-4 w-4" />
                       </Button>
@@ -171,10 +156,11 @@ export default function Contact() {
                         rel="noreferrer"
                         variant="secondary"
                       >
+                        <WhatsAppIcon className="h-4 w-4 shrink-0" />
                         {t('contact.whatsappInstead')}
                       </Button>
                       {submitted ? (
-                        <div className="text-sm font-bold text-primary">
+                        <div className="text-sm font-[400] text-[#0D7A34]">
                           ✓ {t('contact.submitted')}
                         </div>
                       ) : null}
@@ -182,18 +168,18 @@ export default function Contact() {
                   </form>
                 </div>
 
-                {/* Emergency box */}
-                <div className="mt-5 bg-amber-50 rounded-2xl border border-amber-200 p-6">
-                  <div className="flex items-start gap-3">
-                    <div className="h-10 w-10 rounded-xl bg-amber-100 border border-amber-200 grid place-items-center shrink-0">
-                      <AlertTriangle className="h-5 w-5 text-amber-700" />
+                {/* Emergency box - improved styling */}
+                <div className="mt-6 bg-[#FFFBEB] rounded-[6px] border border-[#FCD34D] p-6">
+                  <div className="flex items-start gap-3.5">
+                    <div className="h-10 w-10 rounded-[6px] bg-[#F59E0B] border border-[#F59E0B] grid place-items-center shrink-0">
+                      <AlertTriangle className="h-5 w-5 text-white" />
                     </div>
                     <div>
-                      <div className="font-bold text-amber-900">{t('contact.emergencyTitle')}</div>
-                      <p className="mt-1 text-sm text-amber-800/80">
+                      <div className="font-[500] text-[#92400E]">{t('contact.emergencyTitle')}</div>
+                      <p className="mt-1 text-[14px] font-[300] text-[#B45309] leading-[1.5]">
                         {t('contact.emergencyDesc')}
                       </p>
-                      <div className="mt-3 flex flex-col sm:flex-row gap-2">
+                      <div className="mt-4 flex flex-col sm:flex-row gap-3">
                         <Button as="a" href={contactDetails.phone.tel} variant="dark">
                           <Phone className="h-4 w-4" />
                           {t('common.callNow')}
@@ -205,6 +191,7 @@ export default function Contact() {
                           rel="noreferrer"
                           variant="secondary"
                         >
+                          <WhatsAppIcon className="h-4 w-4 shrink-0" />
                           {t('contact.whatsappUrgent')}
                         </Button>
                       </div>
@@ -214,56 +201,69 @@ export default function Contact() {
               </Motion.div>
 
               {/* Sidebar */}
-              <Motion.div variants={fadeUp} className="lg:col-span-5 grid gap-5">
+              <Motion.div variants={fadeUp} className="lg:col-span-5 grid gap-6">
                 {/* Consultation image */}
-                <div className="rounded-2xl overflow-hidden shadow-card border border-black/[0.06]">
+                <div className="rounded-[8px] overflow-hidden shadow-elevated border border-[#E5E7EB]">
                   <img
                     src={getConsultationImage()}
                     alt=""
-                    className="w-full h-[200px] object-cover"
+                    className="w-full h-[280px] object-cover"
                     loading="lazy"
                   />
                 </div>
 
                 {/* Contact details */}
-                <div className="bg-white rounded-2xl border border-black/[0.07] shadow-soft p-6">
-                  <div className="text-lg font-bold text-primary">
-                    {t('contact.contactDetails')}
-                  </div>
-                  <div className="mt-5 grid gap-3.5 text-sm text-secondary/75">
-                    <a className="flex items-center gap-3 hover:text-primary transition-colors" href={contactDetails.phone.tel}>
-                      <Phone className="h-4 w-4 text-accent shrink-0" />
+                <div className="bg-white rounded-[6px] border border-[#E5E7EB] p-6 shadow-ambient">
+                  <div className="text-[16px] font-[400] text-[#0B1C2C] leading-tight">{t('contact.contactDetails')}</div>
+                  <div className="mt-5 grid gap-4 text-[14px] font-[300] text-[#4B5563]">
+                    <a className="flex items-center gap-3 hover:text-[#0B1C2C] transition-colors duration-150" href={contactDetails.phone.tel}>
+                      <Phone className="h-5 w-5 text-[#C8A951] shrink-0" />
                       {contactDetails.phone.display}
                     </a>
-                    <a className="flex items-center gap-3 hover:text-primary transition-colors" href={`mailto:${contactDetails.email}`}>
-                      <Mail className="h-4 w-4 text-accent shrink-0" />
+                    <a className="flex items-center gap-3 hover:text-[#0B1C2C] transition-colors duration-150" href={`mailto:${contactDetails.email}`}>
+                      <Mail className="h-5 w-5 text-[#C8A951] shrink-0" />
                       {contactDetails.email}
                     </a>
-                    <div className="flex items-start gap-3">
-                      <MapPin className="mt-0.5 h-4 w-4 text-accent shrink-0" />
-                      <span>{contactDetails.address}</span>
+                    <div className="mt-1 flex flex-col gap-3">
+                      {offices.map((office) => (
+                        <a
+                          key={office.id}
+                          href={office.mapsLink}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="flex items-start gap-3 hover:text-[#0B1C2C] transition-colors duration-150 group"
+                        >
+                          <MapPin className="mt-0.5 h-5 w-5 text-[#C8A951] shrink-0" />
+                          <div>
+                            <div className="text-[12px] font-[400] text-[#B8960B] group-hover:text-[#0B1C2C] transition-colors">
+                              {office.label}
+                            </div>
+                            <div className="text-[13px] leading-snug">{office.address}</div>
+                          </div>
+                        </a>
+                      ))}
                     </div>
                   </div>
                 </div>
 
                 {/* Map */}
-                <div className="rounded-2xl overflow-hidden shadow-card border border-black/[0.06]">
+                <div className="rounded-[8px] overflow-hidden shadow-elevated border border-[#E5E7EB]">
                   <iframe
                     title="LegalSupportNow Location"
                     src={contactDetails.mapsEmbed}
-                    className="w-full h-[280px]"
+                    className="w-full h-[320px]"
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                   />
                 </div>
 
                 {/* Privacy note */}
-                <div className="bg-white rounded-2xl border border-black/[0.07] shadow-soft p-6">
-                  <div className="flex items-center gap-2 font-bold text-primary">
-                    <AlertTriangle className="h-4 w-4 text-accent shrink-0" />
+                <div className="bg-white rounded-[6px] border border-[#E5E7EB] shadow-ambient p-6">
+                  <div className="flex items-center gap-2 font-[400] text-[#0B1C2C] mb-2">
+                    <AlertTriangle className="h-4 w-4 text-[#C8A951] shrink-0" />
                     {t('contact.privacyTitle')}
                   </div>
-                  <p className="mt-2 text-sm text-secondary/75 leading-relaxed">
+                  <p className="mt-2 text-sm text-[#4B5563]/75 leading-relaxed">
                     {t('contact.privacyDesc')}
                   </p>
                 </div>

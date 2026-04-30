@@ -19,7 +19,7 @@ export default function LanguageToggle({ tone = 'dark' }) {
           : 'bg-black/5 border border-black/5 hover:bg-black/10 shadow-inner-soft',
       ].join(' ')}
     >
-      <div className={['px-2 flex items-center shrink-0', isLight ? 'text-accent/80' : 'text-primary/50'].join(' ')}>
+      <div className={['px-2 flex items-center shrink-0', isLight ? 'text-[#C8A951]/80' : 'text-[#0B1C2C]/50'].join(' ')}>
         <Languages className="w-3.5 h-3.5" strokeWidth={2.5} />
       </div>
       
@@ -34,8 +34,8 @@ export default function LanguageToggle({ tone = 'dark' }) {
             className={[
               'relative px-3 py-1.5 rounded-full transition-colors duration-300 outline-none focus-visible:ring-2 focus-visible:ring-accent',
               active
-                ? isLight ? 'text-primary' : 'text-white'
-                : isLight ? 'text-white/60 hover:text-white' : 'text-primary/60 hover:text-primary',
+                ? isLight ? 'text-[#0B1C2C]' : 'text-white'
+                : isLight ? 'text-white/60 hover:text-white' : 'text-[#0B1C2C]/60 hover:text-[#0B1C2C]',
             ].join(' ')}
           >
             {active && (
@@ -43,7 +43,7 @@ export default function LanguageToggle({ tone = 'dark' }) {
                 layoutId={`lang-pill-${toggleId}`}
                 className={[
                   'absolute inset-0 rounded-full',
-                  isLight ? 'bg-white shadow-soft' : 'bg-primary shadow-card',
+                  isLight ? 'bg-white shadow-soft' : 'bg-[#08151F] shadow-card',
                 ].join(' ')}
                 initial={false}
                 transition={{ type: 'spring', stiffness: 500, damping: 35 }}

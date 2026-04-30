@@ -1,60 +1,61 @@
 import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
-import { Menu, X, PhoneCall, MessageCircle, Mail, ShieldCheck } from 'lucide-react'
+import { Menu, X, MessageCircle, Mail, ShieldCheck, ArrowRight } from 'lucide-react'
 import { motion as Motion, AnimatePresence } from 'framer-motion'
 import Logo from './Logo.jsx'
-import Button from './Button.jsx'
 import { useI18n } from '../utils/i18n.js'
 import { useDisclaimerAccepted } from '../context/DisclaimerContext.jsx'
 import navigationData from '../data/navigation.json'
 import contactData from '../data/contact.json'
 
 const navItems = navigationData.primary
-const { phone, whatsapp, email } = contactData.contact
+const { whatsapp, email } = contactData.contact
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const { t, lang } = useI18n()
   const disclaimerAccepted = useDisclaimerAccepted()
-
   const closeMenu = () => setOpen(false)
 
   if (!disclaimerAccepted) return null
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      {/* ── Top Utility Bar (desktop only) ── */}
-      <div className="hidden md:block bg-[#08151f] text-white/70 text-xs border-b border-white/5">
-        <div className="container-max h-9 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-5">
-            <a href={`mailto:${email}`} className="group inline-flex items-center gap-2 hover:text-white transition-colors">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent" />
-              </span>
-              <span className="font-semibold tracking-wide">
-                {lang === 'hi' ? '24/7 आपातकालीन सहायता:' : '24/7 Emergency Support:'}
-              </span>
-              <span className="font-bold text-accent group-hover:text-white transition-colors">{email}</span>
-            </a>
-          </div>
-          <div className="flex items-center gap-4">
-            <span className="hidden lg:inline-flex items-center gap-1.5">
-              <ShieldCheck className="h-3.5 w-3.5 text-accent" />
-              {lang === 'hi' ? '100% गोपनीय परामर्श' : '100% Confidential Consultation'}
+      {/* ── Top Utility Bar — desktop only (DESIGN.md: brand-dark #08151F) ── */}
+      <div className="hidden md:block bg-[#08151F] text-white/60 text-[11px]">
+        <div className="container-max h-8 flex items-center justify-between gap-4">
+          <a
+            href={`mailto:${email}`}
+            className="inline-flex items-center gap-2 hover:text-white transition-colors duration-150"
+          >
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C8A951] opacity-75" />
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#C8A951]" />
             </span>
-          </div>
+            <span className="font-[400] tracking-wide">
+              {lang === 'hi' ? '24/7 आपातकालीन सहायता:' : '24/7 Emergency Support:'}
+            </span>
+            <span className="font-[400] text-[#E8D38A] hover:text-white transition-colors">{email}</span>
+          </a>
+          <span className="hidden lg:inline-flex items-center gap-1.5 text-white/50">
+            <ShieldCheck className="h-3 w-3 text-[#C8A951]" />
+            {lang === 'hi' ? '100% गोपनीय परामर्श' : '100% Confidential Consultation'}
+          </span>
         </div>
       </div>
 
-      {/* ── Main Navigation Bar ── */}
-      <div className="bg-primary border-b border-white/10 shadow-lg">
-        <div className="container-max h-[68px] flex items-center justify-between gap-6">
+      {/* ── Main Nav Bar (DESIGN.md: white bg, backdrop blur, top-sm shadow) ── */}
+      <div
+        className="bg-white/95 backdrop-blur-[12px] border-b border-[#E5E7EB]"
+        style={{ boxShadow: 'rgba(11,28,44,0.08) 0px 2px 8px 0px' }}
+      >
+        
+        <div className="container-max h-[64px] flex items-center justify-between gap-6">
           {/* Logo */}
-          <Logo variant="dark" />
+          <Logo variant="light" />
 
-          {/* Desktop nav (centered) */}
-          <nav className="hidden lg:flex items-center gap-1 mx-auto">
+          {/* Desktop nav — DESIGN.md: 14px/400/navy, 6px hover bg */}
+          <nav className="hidden lg:flex items-center gap-0.5 mx-auto" aria-label="Main navigation">
             {navItems.map((item) => (
               <NavLink
                 key={item.to}
@@ -62,10 +63,10 @@ export default function Navbar() {
                 end={item.to === '/'}
                 className={({ isActive }) =>
                   [
-                    'relative px-4 py-2 text-sm font-semibold rounded-lg transition-all duration-200',
+                    'px-3 py-2 text-[14px] font-[400] rounded-[6px] transition-all duration-150',
                     isActive
-                      ? 'text-accent bg-white/5'
-                      : 'text-white/70 hover:text-white hover:bg-white/5',
+                      ? 'text-[#C8A951] bg-[rgba(200,169,81,0.06)]'
+                      : 'text-[#0B1C2C] hover:text-[#C8A951] hover:bg-[rgba(200,169,81,0.04)]',
                   ].join(' ')
                 }
               >
@@ -81,30 +82,34 @@ export default function Navbar() {
               target="_blank"
               rel="noreferrer"
               aria-label="WhatsApp"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/15 text-white/80 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-[6px] border border-[#E5E7EB] text-[#4B5563] hover:text-[#C8A951] hover:border-[#E8D38A] transition-all duration-150"
             >
               <MessageCircle className="h-4 w-4" />
             </a>
-            <Button as="link" to="/contact" variant="accent" className="shrink-0 whitespace-nowrap">
-              <PhoneCall className="h-3.5 w-3.5 shrink-0" />
+            {/* CTA: DESIGN.md primary gold button */}
+            <NavLink
+              to="/contact"
+              className="inline-flex items-center gap-2 min-h-[36px] px-4 py-2 bg-[#C8A951] text-[#0B1C2C] text-[14px] font-[400] rounded-[4px] hover:bg-[#B8960B] transition-colors duration-150 whitespace-nowrap"
+            >
               {t('nav.cta')}
-            </Button>
+              <ArrowRight className="h-3.5 w-3.5" />
+            </NavLink>
           </div>
 
-          {/* Mobile hamburger */}
+          {/* Mobile hamburger — DESIGN.md: 6px radius */}
           <button
-            className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/20 text-white hover:bg-white/10 transition-colors"
+            className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-[6px] border border-[#E5E7EB] text-[#0B1C2C] hover:bg-[#F8F9FA] transition-colors duration-150"
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
           >
             <AnimatePresence mode="wait" initial={false}>
               {open ? (
-                <Motion.span key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.15 }}>
+                <Motion.span key="x" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.12 }}>
                   <X className="h-5 w-5" />
                 </Motion.span>
               ) : (
-                <Motion.span key="open" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.15 }}>
+                <Motion.span key="m" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.12 }}>
                   <Menu className="h-5 w-5" />
                 </Motion.span>
               )}
@@ -113,34 +118,35 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* ── Mobile Drawer ── */}
+      {/* ── Mobile Drawer (DESIGN.md: brand-dark #08151F) ── */}
       <AnimatePresence>
         {open && (
           <Motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.22, ease: 'easeOut' }}
-            className="lg:hidden overflow-hidden bg-primary border-t border-white/10 shadow-2xl"
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+            className="lg:hidden overflow-hidden bg-[#08151F] border-t border-white/[0.08]"
+            style={{ boxShadow: 'rgba(11,28,44,0.35) 0px 14px 21px -14px' }}
           >
             <div className="container-max py-4 flex flex-col gap-1">
-              {/* Emergency banner inside mobile menu */}
+              {/* Email banner */}
               <a
                 href={`mailto:${email}`}
                 onClick={closeMenu}
-                className="flex items-center gap-3 rounded-xl bg-accent/10 border border-accent/30 px-4 py-3 mb-2"
+                className="flex items-center gap-3 rounded-[6px] bg-[rgba(200,169,81,0.15)] border border-[rgba(200,169,81,0.30)] px-4 py-3 mb-2"
               >
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent" />
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C8A951] opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#C8A951]" />
                 </span>
                 <div className="flex-1">
-                  <div className="text-[11px] font-bold tracking-wider uppercase text-accent">
+                  <div className="text-[10px] font-[400] tracking-[0.12em] uppercase text-[#E8D38A]">
                     {lang === 'hi' ? '24/7 सहायता' : '24/7 Support'}
                   </div>
-                  <div className="text-sm font-bold text-white">{email}</div>
+                  <div className="text-[14px] font-[400] text-white mt-0.5">{email}</div>
                 </div>
-                <Mail className="h-4 w-4 text-accent" />
+                <Mail className="h-4 w-4 text-[#E8D38A]" />
               </a>
 
               {/* Nav links */}
@@ -152,10 +158,10 @@ export default function Navbar() {
                   onClick={closeMenu}
                   className={({ isActive }) =>
                     [
-                      'flex items-center rounded-lg px-4 py-3 font-semibold transition-colors border-l-2',
+                      'flex items-center rounded-[6px] px-4 py-3 text-[14px] font-[400] transition-colors border-l-2',
                       isActive
-                        ? 'text-accent bg-accent/10 border-accent'
-                        : 'text-white/80 hover:text-white hover:bg-white/8 border-transparent',
+                        ? 'text-[#E8D38A] bg-[rgba(200,169,81,0.12)] border-[#C8A951]'
+                        : 'text-white/70 hover:text-white hover:bg-white/[0.05] border-transparent',
                     ].join(' ')
                   }
                 >
@@ -163,22 +169,27 @@ export default function Navbar() {
                 </NavLink>
               ))}
 
-              <div className="pt-4 mt-2 border-t border-white/10 flex flex-col gap-3">
+              {/* Bottom CTAs */}
+              <div className="pt-4 mt-2 border-t border-white/[0.08] flex flex-col gap-2">
                 <div className="grid grid-cols-2 gap-2">
                   <a
                     href={whatsapp}
                     target="_blank"
                     rel="noreferrer"
                     onClick={closeMenu}
-                    className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/15 px-4 py-2.5 text-sm font-semibold text-white/85 hover:bg-white/8 transition"
+                    className="inline-flex items-center justify-center gap-2 rounded-[6px] border border-white/20 px-4 py-2.5 text-[14px] font-[400] text-white/80 hover:bg-white/10 transition-colors"
                   >
                     <MessageCircle className="h-4 w-4" />
                     WhatsApp
                   </a>
-                  <Button as="link" to="/contact" variant="accent" className="justify-center" onClick={closeMenu}>
-                    <PhoneCall className="h-4 w-4" />
+                  <NavLink
+                    to="/contact"
+                    onClick={closeMenu}
+                    className="inline-flex items-center justify-center gap-2 rounded-[4px] bg-[#C8A951] px-4 py-2.5 text-[14px] font-[400] text-[#0B1C2C] hover:bg-[#B8960B] transition-colors"
+                  >
                     {t('nav.cta')}
-                  </Button>
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </NavLink>
                 </div>
               </div>
             </div>
@@ -188,3 +199,4 @@ export default function Navbar() {
     </header>
   )
 }
+

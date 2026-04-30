@@ -68,15 +68,17 @@
     },
     {
       "id": "cyber",
-      "title": "Cyber Law",
+      "title": "Cyber Crime Solutions",
       "icon": "Shield",
-      "highlight": false,
-      "description": "Guidance for cyber complaints, account compromise, online fraud documentation, and safe communication.",
+      "highlight": true,
+      "description": "Delhi's specialist cyber crime vakeel — UPI/bank fraud, IT Act Section 66 hacking cases, sextortion, online harassment, and digital evidence documentation for court.",
       "services": [
-        "Online fraud documentation",
-        "Cyber complaint guidance",
-        "Defamation/impersonation cases",
-        "Digital evidence preservation"
+        "UPI & bank fraud recovery",
+        "Cyber harassment & stalking",
+        "Sextortion & blackmail defense",
+        "IT Act 66C/66D hacking cases",
+        "Social media defamation & impersonation",
+        "Digital evidence documentation"
       ]
     }
   ]

@@ -20,22 +20,23 @@ const dict = {
       verifiedClient: 'सत्यापित क्लाइंट',
     },
     home: {
-      seoTitle: 'तत्काल मामलों के लिए कानूनी मदद',
+      seoTitle: 'दिल्ली NCR में क्रिमिनल व साइबर क्राइम एडवोकेट | LegalSupportNow',
       seoDesc:
-        'क्रिमिनल डिफेंस प्राथमिकता के साथ तेज़, स्पष्ट और भरोसेमंद कानूनी सहायता।',
-      heroEyebrow: 'क्रिमिनल डिफेंस प्राथमिकता • तत्काल प्रतिनिधित्व',
-      heroTitle: 'उत्तराखंड में विशेषज्ञ कानूनी सहायता और क्रिमिनल डिफेंस',
-      heroDesc: 'LegalSupportNow तत्काल मामलों के लिए तेज़, स्पष्ट और भरोसेमंद कानूनी सहायता प्रदान करता है। बेल एप्लीकेशन, FIR समीक्षा और कोर्ट-रेडी रणनीतियों में विशेषज्ञ।',
+        'दिल्ली NCR में अनुभवी एडवोकेट व वकील (vakeel) | बेल आवेदन, FIR समीक्षा, UPI फ्रॉड, IT Act 66 और साइबर उत्पीड़न केस | LegalSupportNow',
+      heroEyebrow: 'दिल्ली NCR एडवोकेट • क्रिमिनल डिफेंस • साइबर क्राइम सॉल्यूशन',
+      heroTitle: 'दिल्ली NCR में क्रिमिनल व साइबर क्राइम के सर्वश्रेष्ठ एडवोकेट',
+      heroDesc: 'LegalSupportNow – दिल्ली NCR का भरोसेमंद vakeel और advocate। बेल आवेदन, FIR समीक्षा, UPI फ्रॉड रिकवरी, IT Act 66 केस, और 24–48 घंटे में कोर्ट-रेडी रणनीति।',
+
       heroPrimaryCta: 'अभी कानूनी मदद लें',
       heroSecondaryCta: 'व्हाट्सऐप पर सलाह',
-      stats1k: '12+',
+      stats1k: '7+',
       stats1v: 'वर्षों का अनुभव',
       stats2k: '1,500+',
       stats2v: 'केस मार्गदर्शन व दस्तावेज़ीकरण',
       stats3k: 'तेज़',
       stats3v: 'तत्काल केस रूटिंग',
-      successEyebrow: 'सफलता',
-      successTitle: 'तैयारी और टाइमिंग पर आधारित रिकॉर्ड',
+      successEyebrow: 'सफलता रिकॉर्ड',
+      successTitle: 'दिल्ली NCR एडवोकेट के रूप में 7+ वर्षों का अनुभव',
       successDesc:
         'परिणाम तथ्य, क्षेत्राधिकार और कोर्ट के विवेक पर निर्भर करते हैं। हमारा फोकस प्रक्रिया पर है: दस्तावेज़, तात्कालिकता, और कोर्ट-रेडी रणनीति।',
       successMetric1k: '700+',
@@ -57,7 +58,7 @@ const dict = {
         'हम संरचित इंटेक, एविडेंस प्रिज़र्वेशन और एक साफ़ नैरेटिव पर ध्यान देते हैं—खासकर जब समय कम हो।',
       successPanelCta: 'केस इंटेक शुरू करें',
       practiceEyebrow: 'प्रैक्टिस एरिया',
-      practiceTitle: 'वास्तविक टाइमलाइनों के अनुसार सपोर्ट',
+      practiceTitle: 'दिल्ली NCR में एडवोकेट सेवाएं - क्रिमिनल व साइबर क्राइम',
       practiceDesc:
         'हर मामले की शुरुआत दस्तावेज़, रिस्क आकलन और व्यावहारिक अगले कदम से होती है। क्रिमिनल लॉ हमारा प्राथमिक फोकस है।',
       trustEyebrow: 'भरोसा • प्रक्रिया',
@@ -109,13 +110,13 @@ const dict = {
       readySecondaryCta: 'व्हाट्सऐप करें',
     },
     practice: {
-      seoTitle: 'प्रैक्टिस एरिया',
+      seoTitle: 'दिल्ली NCR एडवोकेट सेवाएं | क्रिमिनल लॉ विशेषज्ञ',
       seoDesc:
-        'क्रिमिनल लॉ प्राथमिकता के साथ—संरचित इंटेक, दस्तावेज़ और स्पष्ट अगले कदम।',
+        'दिल्ली NCR में सर्वश्रेष्ठ advocate व vakeel | बेल आवेदन, FIR समीक्षा, साइबर क्राइम, IT Act 66 और संपत्ति विवाद में माहिर।',
       eyebrow: 'प्रैक्टिस एरिया',
-      title: 'फुल-स्पेक्ट्रम सपोर्ट, क्रिमिनल-फर्स्ट फोकस',
+      title: 'दिल्ली NCR में एडवोकेट सेवाएं - सभी क्रिमिनल केस',
       desc:
-        'हर एंगेजमेंट की शुरुआत संरचित इंटेक, डॉक्यूमेंट चेकलिस्ट और रिस्क आकलन से होती है। रणनीति स्पष्ट, टाइमलाइन वास्तविक, और कम्युनिकेशन अनुशासित।',
+        'हर मामले की शुरुआत संरचित इंटेक, डॉक्यूमेंट चेकलिस्ट और रिस्क आकलन से होती है। दिल्ली NCR के सभी जिलों में एडवोकेट सेवाएं उपलब्ध हैं।',
       mainFocus: 'मुख्य फोकस',
       ctaEyebrow: 'कन्फ्यूज़्ड हैं?',
       ctaTitle: 'अपनी स्थिति बताइए। हम सही रूट करेंगे।',
@@ -124,16 +125,16 @@ const dict = {
       ctaPrimary: 'अभी कानूनी मदद लें',
     },
     about: {
-      seoTitle: 'हमारे बारे में',
+      seoTitle: 'दिल्ली NCR एडवोकेट | क्रिमिनल डिफेंस विशेषज्ञ',
     },
     blog: {
-      seoTitle: 'ब्लॉग',
+      seoTitle: 'क्रिमिनल लॉ ब्लॉग | दिल्ली NCR एडवोकेट की सलाह',
       seoDesc:
-        'क्लटर-फ्री लीगल इनसाइट्स—क्रिमिनल लॉ प्राथमिकता के साथ।',
+        'दिल्ली NCR एडवोकेट की कानूनी सलाह | बेल प्रक्रिया, FIR सुझाव, साइबर क्राइम गाइड।',
       eyebrow: 'ब्लॉग',
-      title: 'क्लटर के बिना व्यावहारिक लीगल इनसाइट्स',
+      title: 'एडवोकेट की सलाह - क्रिमिनल केस गाइड',
       desc:
-        'संक्षिप्त, संरचित लेख—दस्तावेज़, टाइमलाइन और अगले कदम पर फोकस।',
+        'दिल्ली NCR में एडवोकेट (vakeel) से संरचित लेख—दस्तावेज़, टाइमलाइन और अगले कदम पर फोकस।',
       all: 'सभी',
     },
     contact: {
@@ -196,7 +197,7 @@ const dict = {
       about: 'About',
       blog: 'Blog',
       contact: 'Contact',
-      cta: 'Get Legal Help Now',
+      cta: 'Legal Support Now',
     },
     common: {
       whatsapp: 'WhatsApp',
@@ -206,22 +207,23 @@ const dict = {
       verifiedClient: 'Verified client',
     },
     home: {
-      seoTitle: 'Legal help for urgent cases',
+      seoTitle: 'Criminal Defense & Cyber Crime Advocate in Delhi NCR | LegalSupportNow',
       seoDesc:
-        'Fast, clear, and trustworthy legal support with a criminal-defense priority.',
-      heroEyebrow: 'Criminal defense priority • urgent representation',
-      heroTitle: 'Expert Legal Support & Criminal Defense in Uttarakhand',
-      heroDesc: 'LegalSupportNow provides fast, clear, and trustworthy legal assistance for urgent matters. Specializing in bail applications, FIR reviews, and courtroom-ready strategies.',
-      heroPrimaryCta: 'Get Legal Help Now',
+        'Expert advocate & vakeel in Delhi NCR | Bail applications, FIR review, cyber crime (UPI fraud, IT Act 66), emergency legal support | LegalSupportNow',
+      heroEyebrow: 'Delhi NCR advocate • criminal defense • cyber crime solutions',
+      heroTitle: 'Best Criminal & Cyber Crime Advocate (Vakeel) in Delhi NCR',
+      heroDesc: "LegalSupportNow \u2013 Delhi NCR's trusted advocate for criminal defense and cyber crime cases. Bail applications, FIR review, UPI fraud recovery, IT Act 66 cases, and court-ready strategy in 24\u201348 hours.",
+
+      heroPrimaryCta: 'Get Legal Support Now',
       heroSecondaryCta: 'WhatsApp Consultation',
-      stats1k: '12+',
+      stats1k: '7+',
       stats1v: 'Years in practice',
       stats2k: '1,500+',
       stats2v: 'Cases guided & documented',
       stats3k: 'Fast',
       stats3v: 'Urgent response routing',
-      successEyebrow: 'Success',
-      successTitle: 'A track record built on preparation and timing',
+      successEyebrow: 'Success Record',
+      successTitle: '7+ years as criminal advocate in Delhi NCR',
       successDesc:
         'Outcomes depend on facts, jurisdiction, and court discretion. What we control is process: documentation, urgency, and courtroom-ready strategy.',
       successMetric1k: '700+',
@@ -234,7 +236,8 @@ const dict = {
       successItems: [
         'Bail application drafted, documented, and argued with urgency',
         'FIR review and next-step strategy to avoid procedural mistakes',
-        'Evidence checklist to reduce contradictions and delays',
+        'Cyber crime complaints: UPI fraud, IT Act 66, sextortion & harassment',
+        'Digital evidence documentation and court-ready preservation',
         'Hearing preparation: what to file, when, and why',
       ],
       successPanelEyebrow: 'What “success” means here',
@@ -243,9 +246,10 @@ const dict = {
         'We focus on structured intake, evidence preservation, and a clean narrative—especially where time is tight.',
       successPanelCta: 'Start case intake',
       practiceEyebrow: 'Practice areas',
-      practiceTitle: 'Focused legal support, built for real timelines',
+      practiceTitle: 'Criminal Defense & Cyber Crime — Delhi NCR Advocate',
       practiceDesc:
-        'Every matter starts with documentation, risk assessment, and a practical next-steps plan. Criminal law is our priority focus.',
+        'Every matter starts with documentation, risk assessment, and a practical next-steps plan. Criminal law and cyber crime are our priority focus areas.',
+
       trustEyebrow: 'Trust & process',
       trustTitle: 'Professional, discreet, and built around evidence',
       trustDesc:
@@ -295,13 +299,14 @@ const dict = {
       readySecondaryCta: 'WhatsApp now',
     },
     practice: {
-      seoTitle: 'Practice Areas',
+      seoTitle: 'Criminal & Cyber Crime Advocate Delhi NCR | Bail, FIR, IT Act 66',
       seoDesc:
-        'Explore practice areas with a priority focus on criminal law, backed by structured documentation and clear next steps.',
+        'Expert advocate & vakeel in Delhi NCR for criminal defense and cyber crime | Bail, FIR review, UPI fraud, IT Act 66C/66D, sextortion, online harassment.',
+
       eyebrow: 'Practice Areas',
-      title: 'Full-spectrum legal support, criminal-first focus',
+      title: 'Advocate Services in Delhi NCR — All Criminal & Cyber Cases',
       desc:
-        'Every engagement begins with a structured intake, document checklist, and risk assessment. Clear strategy, realistic timelines, disciplined communication.',
+        'Every matter starts with structured intake, document checklist, and risk assessment. Serving all districts of Delhi NCR as your trusted criminal advocate.',
       mainFocus: 'Main focus',
       ctaEyebrow: 'Not sure where you fit?',
       ctaTitle: 'Tell us your situation. We’ll route it correctly.',
@@ -310,23 +315,20 @@ const dict = {
       ctaPrimary: 'Get Legal Help Now',
     },
     blog: {
-      seoTitle: 'Blog',
+      seoTitle: 'Criminal Law Blog | Advocate Advice for Delhi NCR',
       seoDesc:
-        'Practical legal insights—criminal law first, plus cyber, property, and family law.',
+        'Legal advice from criminal advocate in Delhi NCR | Bail process, FIR guide, cyber crime help, IT Act 66.',
       eyebrow: 'Blog',
-      title: 'Practical legal insights without the clutter',
+      title: 'Advocate Legal Tips — Criminal & Cyber Crime Guides',
       desc:
-        'Quick, structured reads focused on documentation, timelines, and next steps—especially in criminal defense.',
+        'Structured articles from an experienced advocate in Delhi NCR — focused on documentation, timelines, and next steps.',
       all: 'All',
     },
     contact: {
-      seoTitle: 'Contact',
+      seoTitle: 'Contact Advocate — Urgent Legal Help in Delhi NCR',
       seoDesc:
-        'Contact LegalSupportNow for urgent legal support. Share your case type and we’ll respond with a structured next-step plan.',
+        'Contact our advocate in Delhi NCR for urgent legal support. Share your case type — criminal defense, cyber crime, bail, FIR — and we will provide a structured next-step plan.',
       eyebrow: 'Contact',
-      title: 'Tell us what happened. We’ll guide the next step.',
-      desc:
-        'No backend is used—your message stays on your device in this demo build. For production, this is ready to connect to a secure API.',
       formTitle: 'Case intake form',
       formDesc:
         'Share what matters: location, urgency, and key facts. We’ll follow up with a checklist and next steps.',
@@ -365,7 +367,7 @@ const dict = {
     },
     footer: {
       desc:
-        'LegalSupportNow provides focused legal guidance with priority on criminal defense and urgent representation. Clear strategy, honest timelines, and strong courtroom preparation.',
+        'LegalSupportNow provides focused legal guidance with priority on criminal defense and urgent representation across Delhi NCR. Clear strategy, honest timelines, and strong courtroom preparation.',
       quickLinks: 'Quick links',
       contact: 'Contact',
       rights: 'All rights reserved.',

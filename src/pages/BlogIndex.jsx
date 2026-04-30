@@ -33,7 +33,7 @@ export default function BlogIndex() {
       />
 
       {/* Page header */}
-      <section className="bg-primary">
+      <section className="bg-[#08151F]">
         <div className="container-max py-16 sm:py-20">
           <SectionHeading
             eyebrow={t('blog.eyebrow')}
@@ -57,8 +57,8 @@ export default function BlogIndex() {
                   className={[
                     'rounded-full px-4 py-2 text-xs font-bold tracking-[0.1em] transition-all duration-200 border',
                     c.value === active
-                      ? 'bg-accent text-primary border-accent shadow-glow'
-                      : 'bg-white text-secondary/70 border-black/10 hover:bg-primary hover:text-white hover:border-primary',
+                      ? 'bg-[#C8A951] text-[#0B1C2C] border-[#C8A951] shadow-glow'
+                      : 'bg-white text-[#4B5563]/70 border-black/10 hover:bg-[#08151F] hover:text-white hover:border-primary',
                   ].join(' ')}
                 >
                   {c.label}
@@ -81,26 +81,26 @@ export default function BlogIndex() {
                           loading="lazy"
                         />
                         <div className="absolute inset-0 img-overlay-light" />
-                        <div className="absolute left-4 top-4 rounded-full bg-white/90 backdrop-blur-sm px-3 py-1 text-xs font-bold text-primary border border-black/8">
+                        <div className="absolute left-4 top-4 rounded-full bg-white/90 backdrop-blur-sm px-3 py-1 text-xs font-bold text-[#0B1C2C] border border-black/8">
                           {b.category}
                         </div>
                       </div>
                       {/* Content */}
                       <div className="p-6 sm:p-7">
-                        <h3 className="text-xl font-bold text-primary leading-snug group-hover:text-accent/90 transition-colors">
+                        <h3 className="text-xl font-bold text-[#0B1C2C] leading-snug group-hover:text-[#C8A951]/90 transition-colors">
                           {b.title}
                         </h3>
-                        <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-secondary/60">
+                        <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-[#4B5563]/60">
                           <span>{b.author}</span>
-                          <span className="text-secondary/25">•</span>
+                          <span className="text-[#4B5563]/25">•</span>
                           <span>{formatDate(b.date)}</span>
-                          <span className="text-secondary/25">•</span>
+                          <span className="text-[#4B5563]/25">•</span>
                           <span>{b.readTime}</span>
                         </div>
-                        <p className="mt-4 text-sm text-secondary/75 leading-relaxed line-clamp-3">
+                        <p className="mt-4 text-sm text-[#4B5563]/75 leading-relaxed line-clamp-3">
                           {b.content?.[0]}
                         </p>
-                        <div className="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-primary link-underline">
+                        <div className="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-[#0B1C2C] link-underline">
                           {t('common.readArticle')} <ArrowRight className="h-3.5 w-3.5" />
                         </div>
                       </div>
