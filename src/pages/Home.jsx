@@ -9,6 +9,7 @@ import {
   PhoneCall,
   CheckCircle2,
 } from 'lucide-react'
+import { motion as Motion } from 'framer-motion'
 import Seo from '../components/Seo.jsx'
 import Button from '../components/Button.jsx'
 import Card from '../components/Card.jsx'
