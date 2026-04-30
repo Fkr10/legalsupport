@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 import { Briefcase, MapPin, Award, GraduationCap, CheckCircle2 } from 'lucide-react'
 import Seo from '../components/Seo.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
@@ -45,10 +45,10 @@ export default function About() {
       {/* Main content */}
       <section className="section-alt">
         <div className="container-max py-16 sm:py-20">
-          <motion.div variants={stagger(0.12)} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-80px' }}>
+          <Motion.div variants={stagger(0.12)} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-80px' }}>
             <div className="grid gap-8 lg:grid-cols-12 items-start">
               {/* Lawyer portrait */}
-              <motion.div variants={fadeUp} className="lg:col-span-4">
+              <Motion.div variants={fadeUp} className="lg:col-span-4">
                 <div className="bg-white rounded-2xl overflow-hidden shadow-lift border border-black/[0.07]">
                   <img
                     src={lawyerProfile.photo}
@@ -90,10 +90,10 @@ export default function About() {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </Motion.div>
 
               {/* Content grid */}
-              <motion.div variants={fadeUp} className="lg:col-span-8">
+              <Motion.div variants={fadeUp} className="lg:col-span-8">
                 <div className="grid gap-6">
                   {/* Office photos */}
                   <div className="grid gap-4 sm:grid-cols-2">
@@ -185,9 +185,9 @@ export default function About() {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </Motion.div>
             </div>
-          </motion.div>
+          </Motion.div>
         </div>
       </section>
     </>

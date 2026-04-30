@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 import {
   Gavel,
   Scale,
@@ -65,12 +65,12 @@ export default function PracticeAreas() {
       {/* Cards */}
       <section className="section-alt">
         <div className="container-max py-16 sm:py-20">
-          <motion.div variants={stagger(0.12)} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-80px' }}>
+          <Motion.div variants={stagger(0.12)} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-80px' }}>
             <div className="grid gap-6 md:grid-cols-2">
               {practiceAreasWithIcons.map((p) => {
                 const Icon = p.icon
                 return (
-                  <motion.div key={p.title} variants={fadeUp}>
+                  <Motion.div key={p.title} variants={fadeUp}>
                     <Card
                       className={[
                         'overflow-hidden',
@@ -112,13 +112,13 @@ export default function PracticeAreas() {
                         </div>
                       </div>
                     </Card>
-                  </motion.div>
+                  </Motion.div>
                 )
               })}
             </div>
 
             {/* CTA banner */}
-            <motion.div variants={fadeUp} className="mt-12">
+            <Motion.div variants={fadeUp} className="mt-12">
               <div className="bg-primary rounded-2xl p-8 sm:p-10 flex flex-col md:flex-row gap-6 md:items-center md:justify-between">
                 <div>
                   <div className="text-[11px] font-bold tracking-[0.2em] uppercase text-accent border-l-2 border-accent pl-3">
@@ -147,8 +147,8 @@ export default function PracticeAreas() {
                   </Button>
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
+            </Motion.div>
+          </Motion.div>
         </div>
       </section>
     </>

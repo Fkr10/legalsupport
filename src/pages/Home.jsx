@@ -1,4 +1,3 @@
-import { motion as Motion } from 'framer-motion'
 import {
   ArrowRight,
   ShieldCheck,

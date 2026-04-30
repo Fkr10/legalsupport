@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion as Motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react'
 import { useI18n } from '../utils/i18n.js'
 
@@ -48,7 +48,7 @@ export default function TestimonialSlider({ testimonials = [] }) {
         {/* Quote body */}
         <div className="min-h-[140px]">
           <AnimatePresence mode="wait">
-            <motion.div
+            <Motion.div
               key={current.name}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
@@ -68,7 +68,7 @@ export default function TestimonialSlider({ testimonials = [] }) {
                   {t('common.verifiedClient')}
                 </div>
               </div>
-            </motion.div>
+            </Motion.div>
           </AnimatePresence>
         </div>
 

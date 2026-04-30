@@ -67,7 +67,7 @@ docker-compose down
 The application runs on port **8080** inside the container. To use a different port:
 
 ```bash
-docker run -p 3000:8080 legalsupportnow:latest
+docker run -p 5000:8080 legalsupportnow:latest
 ```
 
 ### Environment Variables

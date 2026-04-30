@@ -1,4 +1,5 @@
 import { Outlet, useLocation } from 'react-router-dom'
+import { motion as Motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import Navbar from './Navbar.jsx'
 import Footer from './Footer.jsx'
@@ -36,7 +37,7 @@ export default function Layout() {
         </div>
       ) : null}
 
-      <motion.main
+      <Motion.main
         variants={pageFade}
         initial="initial"
         animate="animate"
@@ -44,7 +45,7 @@ export default function Layout() {
         className="pt-[68px] md:pt-[104px]"
       >
         <Outlet />
-      </motion.main>
+      </Motion.main>
       <Footer />
     </div>
   )

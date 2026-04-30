@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import Seo from '../components/Seo.jsx'
 import Button from '../components/Button.jsx'
@@ -46,9 +46,9 @@ export default function BlogDetail() {
       />
 
       <section className="container-max py-12 sm:py-16">
-        <motion.div variants={stagger(0.12)} initial="hidden" animate="show">
+        <Motion.div variants={stagger(0.12)} initial="hidden" animate="show">
           {/* Back link */}
-          <motion.div variants={fadeUp}>
+          <Motion.div variants={fadeUp}>
             <Link
               to="/blog"
               className="inline-flex items-center gap-2 text-sm font-semibold text-secondary/60 hover:text-primary transition link-underline"
@@ -56,10 +56,10 @@ export default function BlogDetail() {
               <ArrowLeft className="h-4 w-4" />
               {t('common.backToBlog')}
             </Link>
-          </motion.div>
+          </Motion.div>
 
           {/* Article meta */}
-          <motion.div variants={fadeUp} className="mt-8">
+          <Motion.div variants={fadeUp} className="mt-8">
             <div className="inline-flex items-center gap-2 rounded-full bg-accent/15 border border-accent/20 px-4 py-1.5 text-xs font-bold text-primary tracking-[0.12em] uppercase">
               {blog.category}
             </div>
@@ -73,10 +73,10 @@ export default function BlogDetail() {
               <span className="text-secondary/30">•</span>
               <span>{blog.readTime}</span>
             </div>
-          </motion.div>
+          </Motion.div>
 
           {/* Hero image */}
-          <motion.div variants={fadeUp} className="mt-8">
+          <Motion.div variants={fadeUp} className="mt-8">
             <div className="rounded-2xl overflow-hidden shadow-card border border-black/[0.06]">
               <img
                 src={getBlogImage(blog.slug)}
@@ -85,10 +85,10 @@ export default function BlogDetail() {
                 loading="lazy"
               />
             </div>
-          </motion.div>
+          </Motion.div>
 
           {/* Article body — maximum readability */}
-          <motion.article
+          <Motion.article
             variants={fadeUp}
             className="mt-10 bg-white rounded-2xl border border-black/[0.07] shadow-soft p-8 sm:p-12"
           >
@@ -97,10 +97,10 @@ export default function BlogDetail() {
                 <p key={i}>{p}</p>
               ))}
             </div>
-          </motion.article>
+          </Motion.article>
 
           {/* CTA */}
-          <motion.div variants={fadeUp} className="mt-10">
+          <Motion.div variants={fadeUp} className="mt-10">
             <div className="rounded-2xl bg-primary text-white p-8 sm:p-10 flex flex-col md:flex-row gap-6 md:items-center md:justify-between">
               <div>
                 <div className="text-[11px] font-bold tracking-[0.2em] uppercase text-white/60">
@@ -130,8 +130,8 @@ export default function BlogDetail() {
                 </Button>
               </div>
             </div>
-          </motion.div>
-        </motion.div>
+          </Motion.div>
+        </Motion.div>
       </section>
     </>
   )

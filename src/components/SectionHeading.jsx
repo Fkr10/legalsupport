@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 import { fadeUp } from '../utils/motion.js'
 
 export default function SectionHeading({
@@ -17,7 +17,7 @@ export default function SectionHeading({
       : 'text-accent'
 
   return (
-    <motion.div
+    <Motion.div
       variants={fadeUp}
       className={['max-w-2xl', alignClass].join(' ')}
     >
@@ -44,7 +44,7 @@ export default function SectionHeading({
           {description}
         </p>
       ) : null}
-    </motion.div>
+    </Motion.div>
   )
 }
 

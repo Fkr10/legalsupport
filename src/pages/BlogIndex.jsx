@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import Seo from '../components/Seo.jsx'
@@ -47,9 +47,9 @@ export default function BlogIndex() {
       {/* Blog list */}
       <section className="section-alt">
         <div className="container-max py-12 sm:py-16">
-          <motion.div variants={stagger(0.12)} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-80px' }}>
+          <Motion.div variants={stagger(0.12)} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-80px' }}>
             {/* Category filter */}
-            <motion.div variants={fadeUp} className="flex flex-wrap gap-2">
+            <Motion.div variants={fadeUp} className="flex flex-wrap gap-2">
               {categories.map((c) => (
                 <button
                   key={c.value}
@@ -64,12 +64,12 @@ export default function BlogIndex() {
                   {c.label}
                 </button>
               ))}
-            </motion.div>
+            </Motion.div>
 
             {/* Blog grid */}
             <div className="mt-8 grid gap-6 md:grid-cols-2">
               {filtered.map((b) => (
-                <motion.div key={b.slug} variants={fadeUp}>
+                <Motion.div key={b.slug} variants={fadeUp}>
                   <Link to={`/blog/${b.slug}`} className="block group">
                     <div className="bg-white rounded-2xl shadow-card border border-black/[0.07] overflow-hidden hover:shadow-lift transition-shadow duration-300">
                       {/* Thumbnail */}
@@ -106,10 +106,10 @@ export default function BlogIndex() {
                       </div>
                     </div>
                   </Link>
-                </motion.div>
+                </Motion.div>
               ))}
             </div>
-          </motion.div>
+          </Motion.div>
         </div>
       </section>
     </>
