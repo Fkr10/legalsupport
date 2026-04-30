@@ -380,7 +380,7 @@ const dict = {
 const I18nContext = createContext(null)
 
 export function I18nProvider({ children }) {
-  const [lang, setLang] = useState('hi')
+  const [lang, setLang] = useState('en')
 
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY)

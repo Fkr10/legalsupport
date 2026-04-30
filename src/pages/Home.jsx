@@ -50,7 +50,7 @@ export default function Home() {
       />
 
       {/* ── Hero ── */}
-      <section className="relative min-h-[600px] flex items-center">
+      <section className="relative min-h-screen flex items-center">
         <div className="absolute inset-0 -z-10">
           <img
             src={getHeroImage()}
@@ -58,25 +58,32 @@ export default function Home() {
             className="h-full w-full object-cover"
             loading="eager"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-black/75 via-black/60 to-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-primary/80 to-black/70" />
         </div>
-        <div className="container-max py-20 sm:py-24 w-full">
-          <Motion.div variants={stagger(0.1)} initial="hidden" animate="show">
-            <Motion.div variants={fadeUp} className="max-w-4xl">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-md px-4 py-2 text-xs font-bold tracking-[0.15em] uppercase text-white/80">
+
+        <div className="container-max py-24 sm:py-28 w-full">
+          <Motion.div
+            variants={stagger(0.1)}
+            initial="hidden"
+            animate="show"
+            className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+          >
+            {/* ── Left: Headline + CTAs ── */}
+            <Motion.div variants={fadeUp}>
+              <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 backdrop-blur-md px-4 py-2 text-xs font-bold tracking-[0.15em] uppercase text-accent">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
                 {t('home.heroEyebrow')}
               </div>
 
-              <h1 className="mt-8 text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-tight">
+              <h1 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-[1.15]">
                 {t('home.heroTitle')}
               </h1>
-              <p className="mt-5 text-white/80 text-lg sm:text-xl max-w-2xl leading-relaxed">
+              <p className="mt-5 text-white/75 text-base sm:text-lg max-w-xl leading-relaxed">
                 {t('home.heroDesc')}
               </p>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                <Button as="link" to="/contact" variant="accent">
+                <Button as="link" to="/contact" variant="accent" className="text-base px-6 py-3">
                   {t('home.heroPrimaryCta')} <ArrowRight className="h-4 w-4" />
                 </Button>
                 <Button
@@ -85,28 +92,113 @@ export default function Home() {
                   target="_blank"
                   rel="noreferrer"
                   variant="glass"
-                  className="bg-white/10 text-white border border-white/25 backdrop-blur-md hover:bg-white/20"
+                  className="bg-white/10 text-white border border-white/25 backdrop-blur-md hover:bg-white/20 text-base px-6 py-3"
                 >
                   {t('home.heroSecondaryCta')}
                 </Button>
               </div>
 
-              <div className="mt-12 grid grid-cols-3 gap-3 sm:gap-4">
+              {/* Stats row */}
+              <div className="mt-10 grid grid-cols-3 gap-3">
                 {[
-                  { k: t('home.stats1k'), v: t('home.stats1v') },
-                  { k: t('home.stats2k'), v: t('home.stats2v') },
-                  { k: t('home.stats3k'), v: t('home.stats3v') },
+                  { k: t('home.stats1k'), v: t('home.stats1v'), icon: <Timer className="h-4 w-4 text-accent" /> },
+                  { k: t('home.stats2k'), v: t('home.stats2v'), icon: <FileText className="h-4 w-4 text-accent" /> },
+                  { k: t('home.stats3k'), v: t('home.stats3v'), icon: <ShieldCheck className="h-4 w-4 text-accent" /> },
                 ].map((s) => (
                   <div
                     key={s.v}
-                    className="rounded-xl border border-white/15 bg-white/10 backdrop-blur-md px-4 py-4"
+                    className="rounded-xl border border-white/10 bg-white/8 backdrop-blur-md px-3 py-4 flex flex-col gap-2"
                   >
-                    <div className="text-xl sm:text-2xl font-bold text-white">
+                    {s.icon}
+                    <div className="text-xl sm:text-2xl font-bold text-white leading-none">
                       {s.k}
                     </div>
-                    <div className="mt-1 text-xs sm:text-sm text-white/65">{s.v}</div>
+                    <div className="text-[11px] sm:text-xs text-white/55 leading-snug">{s.v}</div>
                   </div>
                 ))}
+              </div>
+
+              {/* Trust badges */}
+              <div className="mt-6 flex flex-wrap gap-2">
+                {[
+                  { icon: <BadgeCheck className="h-3.5 w-3.5" />, label: lang === 'hi' ? 'सत्यापित वकील' : 'Verified Advocate' },
+                  { icon: <Scale className="h-3.5 w-3.5" />, label: lang === 'hi' ? 'कोर्ट-रेडी रणनीति' : 'Court-Ready Strategy' },
+                  { icon: <ShieldCheck className="h-3.5 w-3.5" />, label: lang === 'hi' ? '100% गोपनीय' : '100% Confidential' },
+                ].map((b) => (
+                  <span key={b.label} className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/8 px-3 py-1.5 text-[11px] font-semibold text-white/75">
+                    {b.icon}
+                    {b.label}
+                  </span>
+                ))}
+              </div>
+            </Motion.div>
+
+            {/* ── Right: Success Panel ── */}
+            <Motion.div variants={fadeUp} className="flex flex-col gap-4">
+              {/* Success metrics card */}
+              <div className="rounded-2xl border border-white/12 bg-white/8 backdrop-blur-xl p-6 sm:p-7">
+                <div className="text-[11px] font-bold tracking-[0.2em] uppercase text-accent mb-4">
+                  {lang === 'hi' ? 'सिद्ध ट्रैक रिकॉर्ड' : 'Proven Track Record'}
+                </div>
+                <div className="grid grid-cols-3 gap-3 mb-5">
+                  {[
+                    { k: t('home.successMetric1k'), v: t('home.successMetric1v') },
+                    { k: t('home.successMetric2k'), v: t('home.successMetric2v') },
+                    { k: t('home.successMetric3k'), v: t('home.successMetric3v') },
+                  ].map((m) => (
+                    <div key={m.v} className="text-center rounded-xl bg-white/8 border border-white/10 px-2 py-3">
+                      <div className="text-lg sm:text-xl font-bold text-white leading-none">{m.k}</div>
+                      <div className="mt-1.5 text-[10px] text-white/55 leading-snug">{m.v}</div>
+                    </div>
+                  ))}
+                </div>
+                <div className="space-y-2.5">
+                  {(t('home.successItems') || []).map((x) => (
+                    <div key={x} className="flex items-start gap-2.5 text-sm text-white/75">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 text-accent shrink-0" />
+                      <span className="leading-snug">{x}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Process steps card */}
+              <div className="rounded-2xl border border-accent/25 bg-primary/60 backdrop-blur-xl p-6">
+                <div className="text-[11px] font-bold tracking-[0.2em] uppercase text-accent mb-4">
+                  {lang === 'hi' ? 'हम कैसे काम करते हैं' : 'How We Work'}
+                </div>
+                <div className="space-y-3">
+                  {[
+                    {
+                      n: '01',
+                      t: lang === 'hi' ? '10–20 मिनट ट्रायज कॉल' : '10–20 min triage call',
+                      d: lang === 'hi' ? 'लोकेशन, सेक्शन, और तात्कालिकता समझना' : 'Understand location, charges & urgency',
+                    },
+                    {
+                      n: '02',
+                      t: lang === 'hi' ? 'लिखित दस्तावेज़ चेकलिस्ट' : 'Written document checklist',
+                      d: lang === 'hi' ? 'क्या शेयर करें और क्या न करें' : 'What to share and what to withhold',
+                    },
+                    {
+                      n: '03',
+                      t: lang === 'hi' ? 'तत्काल मामलों में उसी दिन एक्शन' : 'Same-day action for urgent cases',
+                      d: lang === 'hi' ? 'ड्राफ्टिंग, फाइलिंग और कोर्ट तैयारी' : 'Drafting, filing prep & court readiness',
+                    },
+                  ].map((step) => (
+                    <div key={step.n} className="flex items-start gap-3">
+                      <span className="text-[11px] font-bold text-accent bg-accent/15 rounded-lg px-2 py-1 shrink-0 mt-0.5">{step.n}</span>
+                      <div>
+                        <div className="text-sm font-semibold text-white leading-snug">{step.t}</div>
+                        <div className="text-[12px] text-white/55 mt-0.5 leading-snug">{step.d}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-5 pt-4 border-t border-white/10">
+                  <Button as="link" to="/contact" variant="accent" className="w-full justify-center">
+                    {t('home.heroPrimaryCta')} <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </div>
               </div>
             </Motion.div>
           </Motion.div>

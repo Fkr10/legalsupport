@@ -1,10 +1,8 @@
 import { Outlet, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
 import Navbar from './Navbar.jsx'
 import Footer from './Footer.jsx'
 import FloatingActions from './FloatingActions.jsx'
-import ScrollProgress from './ScrollProgress.jsx'
 import { pageFade } from '../utils/motion.js'
 
 export default function Layout() {
@@ -22,7 +20,6 @@ export default function Layout() {
 
   return (
     <div className="min-h-screen app-bg">
-      <ScrollProgress />
       <Navbar />
       <FloatingActions />
 
@@ -44,7 +41,7 @@ export default function Layout() {
         initial="initial"
         animate="animate"
         exit="exit"
-        className="pt-[70px]"
+        className="pt-[68px] md:pt-[104px]"
       >
         <Outlet />
       </motion.main>
