@@ -21,6 +21,7 @@ import { useI18n } from '../utils/i18n.js'
 import {getPracticeAreaImage } from '../utils/images.js'
 import testimonialsData from '../data/testimonials.json'
 import practiceAreasData from '../data/practiceAreas.json'
+import { siteConfig } from '../config/site.js'
 
 const iconMap = { Gavel, Scale, ShieldCheck, BadgeCheck, Shield }
 const practiceAreas = practiceAreasData.areas.map(area => ({
@@ -80,7 +81,7 @@ export default function Home() {
                   {t('home.heroPrimaryCta')} <ArrowRight className="h-4 w-4" />
                 </Button>
                 <a
-                  href="https://wa.me/917452819652?text=Hi%20I%20need%20legal%20help"
+                  href={`https://wa.me/${siteConfig.contact.whatsapp.number}?text=${siteConfig.contact.whatsapp.defaultMessage}`}
                   target="_blank" rel="noreferrer"
                   className="flex-1 inline-flex items-center justify-center gap-2 min-h-[44px] px-[18px] py-[10px] rounded-[4px] border border-white/30 text-white text-[16px] font-[400] hover:bg-white/10 transition-colors duration-150"
                 >
@@ -257,7 +258,7 @@ export default function Home() {
                   <Button as="link" to="/contact" variant="accent">
                     {lang === 'hi' ? 'साइबर केस सहायता लें' : 'Get Cyber Crime Help'} <ArrowRight className="h-4 w-4" />
                   </Button>
-                  <Button as="a" href="https://wa.me/917452819652?text=Hi%20I%20need%20help%20with%20a%20cyber%20crime%20case" target="_blank" rel="noreferrer" variant="secondary">
+                  <Button as="a" href={`https://wa.me/${siteConfig.contact.whatsapp.number}?text=${encodeURIComponent('Hi I need help with a cyber crime case')}`} target="_blank" rel="noreferrer" variant="secondary">
                     <WhatsAppIcon className="h-4 w-4 shrink-0" />
                     {lang === 'hi' ? 'व्हाट्सऐप करें' : 'WhatsApp Now'}
                   </Button>
@@ -368,7 +369,7 @@ export default function Home() {
                   <Button as="link" to="/contact" variant="accent">
                     {t('home.speedPrimaryCta')} <ArrowRight className="h-4 w-4" />
                   </Button>
-                  <Button as="a" href="https://wa.me/917452819652?text=Hi%20I%20need%20legal%20help" target="_blank" rel="noreferrer" variant="secondary">
+                  <Button as="a" href={`https://wa.me/${siteConfig.contact.whatsapp.number}?text=${siteConfig.contact.whatsapp.defaultMessage}`} target="_blank" rel="noreferrer" variant="secondary">
                     <WhatsAppIcon className="h-4 w-4 shrink-0" />
                     {t('common.whatsapp')}
                   </Button>
@@ -405,7 +406,7 @@ export default function Home() {
                 <Button as="link" to="/contact" variant="accent" className="w-full sm:w-auto justify-center">
                   {t('home.readyPrimaryCta')} <ArrowRight className="h-4 w-4" />
                 </Button>
-                <Button as="a" href="https://wa.me/917452819652?text=Hi%20I%20need%20legal%20help" target="_blank" rel="noreferrer" variant="secondary" className="w-full sm:w-auto justify-center">
+                <Button as="a" href={`https://wa.me/${siteConfig.contact.whatsapp.number}?text=${siteConfig.contact.whatsapp.defaultMessage}`} target="_blank" rel="noreferrer" variant="secondary" className="w-full sm:w-auto justify-center">
                   <WhatsAppIcon className="h-4 w-4 shrink-0" />
                   {t('home.readySecondaryCta')}
                 </Button>
